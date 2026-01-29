@@ -1,0 +1,2479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debt Consolidation | Horizon Financial Services</title>
+    <meta name="description" content="Combine multiple debts into one manageable payment. Simplify your finances, potentially lower your interest rate, and get a clear payoff date. See your options.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: #0c1f3f;
+            --navy-deep: #081428;
+            --slate: #1e3a5f;
+            --white: #ffffff;
+            --off-white: #fafbfc;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-900: #0f172a;
+            --green: #10b981;
+            --green-dark: #059669;
+            --green-glow: rgba(16, 185, 129, 0.15);
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-serif: 'Playfair Display', Georgia, serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--white);
+            color: var(--gray-900);
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           SOPHISTICATED NAVIGATION
+        ======================================== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .nav.scrolled {
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            height: 72px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-mark {
+            width: 36px;
+            height: 36px;
+            color: var(--green);
+        }
+
+        .logo-mark svg {
+            width: 36px;
+            height: 36px;
+        }
+
+        .logo-text {
+            font-family: var(--font-serif);
+            font-size: 1.375rem;
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+            padding: 0.625rem 1rem;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--gray-600);
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--navy);
+            background: var(--gray-50);
+        }
+
+        .nav-link svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.2s ease;
+        }
+
+        .nav-item:hover .nav-link svg {
+            transform: rotate(180deg);
+        }
+
+        .nav-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(8px);
+            min-width: 280px;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s ease;
+            padding: 0.75rem;
+        }
+
+        .nav-item:hover .nav-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.875rem;
+            padding: 0.875rem 1rem;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-item:hover {
+            background: var(--gray-50);
+        }
+
+        .dropdown-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--green-glow);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .dropdown-icon svg {
+            width: 20px;
+            height: 20px;
+            color: var(--green);
+        }
+
+        .dropdown-content h4 {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.125rem;
+        }
+
+        .dropdown-content p {
+            font-size: 0.8125rem;
+            color: var(--gray-500);
+            line-height: 1.4;
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: var(--gray-200);
+            margin: 0.5rem 0;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-phone {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .nav-phone-label {
+            font-size: 0.6875rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+        }
+
+        .nav-phone-number {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--navy);
+            text-decoration: none;
+        }
+
+        .nav-phone-number:hover {
+            color: var(--green);
+        }
+
+        .nav-cta {
+            padding: 0.75rem 1.5rem;
+            background: var(--green);
+            color: var(--white);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--green-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            padding: 8px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+            transition: all 0.3s ease;
+        }
+
+        /* ========================================
+           PAGE HERO
+        ======================================== */
+        .page-hero {
+            position: relative;
+            padding: 10rem 0 5rem;
+            background: var(--navy-deep);
+            overflow: hidden;
+        }
+
+        .page-hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        .page-hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .page-hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background: linear-gradient(135deg, 
+                rgba(8, 20, 40, 0.95) 0%, 
+                rgba(8, 20, 40, 0.85) 50%,
+                rgba(8, 20, 40, 0.8) 100%
+            );
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        .page-hero-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .page-hero-breadcrumb a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .page-hero-breadcrumb a:hover {
+            color: var(--green);
+        }
+
+        .page-hero-breadcrumb span {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .page-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--green-glow);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+        }
+
+        .page-hero-badge-text {
+            font-size: 0.8125rem;
+            font-weight: 500;
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .page-hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 500;
+            line-height: 1.15;
+            color: var(--white);
+            max-width: 700px;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .page-hero-sub {
+            font-size: 1.125rem;
+            color: rgba(255,255,255,0.75);
+            max-width: 560px;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .page-hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.625rem;
+            padding: 1rem 2rem;
+            background: var(--green);
+            color: white;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--green-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-primary svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 1.5rem;
+            background: transparent;
+            color: var(--white);
+            font-size: 0.9375rem;
+            font-weight: 500;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        /* ========================================
+           CONTENT SECTIONS
+        ======================================== */
+        .content-section {
+            padding: 5rem 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section.gray-bg {
+            background: var(--gray-50);
+            max-width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .content-section.gray-bg .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        .content-section.navy-bg {
+            background: var(--navy);
+            max-width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .content-section.navy-bg .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            font-weight: 500;
+            line-height: 1.3;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+        }
+
+        .section-title.light {
+            color: var(--white);
+        }
+
+        .section-intro {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: var(--gray-600);
+            max-width: 640px;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-intro.light {
+            color: rgba(255,255,255,0.75);
+        }
+
+        /* ========================================
+           THE PROBLEM - VISUAL
+        ======================================== */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .problem-visual {
+            position: relative;
+        }
+
+        .bills-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .bill-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 1.5rem;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+        }
+
+        .bill-item:hover {
+            transform: translateX(4px);
+            border-color: var(--gray-300);
+        }
+
+        .bill-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .bill-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bill-icon.cc { background: #fee2e2; color: #dc2626; }
+        .bill-icon.medical { background: #dbeafe; color: #2563eb; }
+        .bill-icon.store { background: #fef3c7; color: #d97706; }
+        .bill-icon.other { background: #f3e8ff; color: #9333ea; }
+
+        .bill-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .bill-name {
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        .bill-details {
+            text-align: right;
+        }
+
+        .bill-amount {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .bill-rate {
+            font-size: 0.75rem;
+            color: #dc2626;
+            font-weight: 500;
+        }
+
+        .arrow-down {
+            display: flex;
+            justify-content: center;
+            padding: 1.5rem 0;
+        }
+
+        .arrow-down svg {
+            width: 32px;
+            height: 32px;
+            color: var(--green);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
+        }
+
+        .consolidated-result {
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+            border: 2px solid var(--green);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .consolidated-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--green);
+            margin-bottom: 0.5rem;
+        }
+
+        .consolidated-amount {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .consolidated-details {
+            font-size: 0.9375rem;
+            color: var(--gray-600);
+        }
+
+        .consolidated-details span {
+            color: var(--green);
+            font-weight: 600;
+        }
+
+        .problem-content h2 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 500;
+            line-height: 1.3;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+        }
+
+        .problem-content p {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .benefit-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            font-size: 1rem;
+            color: var(--gray-700);
+        }
+
+        .benefit-list svg {
+            width: 20px;
+            height: 20px;
+            color: var(--green);
+            flex-shrink: 0;
+            margin-top: 0.125rem;
+        }
+
+        /* ========================================
+           HOW IT WORKS
+        ======================================== */
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .method-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .method-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--green);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .method-card:hover {
+            border-color: var(--green);
+            box-shadow: 0 12px 32px rgba(16, 185, 129, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .method-card:hover::before {
+            opacity: 1;
+        }
+
+        .method-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--green-glow);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .method-icon svg {
+            width: 28px;
+            height: 28px;
+            color: var(--green);
+        }
+
+        .method-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .method-card p {
+            font-size: 0.9375rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .method-pros {
+            list-style: none;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--gray-100);
+        }
+
+        .method-pros li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            margin-bottom: 0.5rem;
+        }
+
+        .method-pros svg {
+            width: 16px;
+            height: 16px;
+            color: var(--green);
+            flex-shrink: 0;
+            margin-top: 0.125rem;
+        }
+
+        /* ========================================
+           COMPARISON: BEFORE/AFTER
+        ======================================== */
+        .comparison-visual {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .comparison-side {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+        }
+
+        .comparison-side.before {
+            border: 1px solid var(--gray-200);
+        }
+
+        .comparison-side.after {
+            border: 2px solid var(--green);
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.03) 0%, var(--white) 100%);
+        }
+
+        .comparison-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .comparison-header-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .comparison-side.before .comparison-header-icon {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+
+        .comparison-side.after .comparison-header-icon {
+            background: var(--green-glow);
+            color: var(--green);
+        }
+
+        .comparison-header-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .comparison-header h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .comparison-stat {
+            margin-bottom: 1.5rem;
+        }
+
+        .comparison-stat:last-child {
+            margin-bottom: 0;
+        }
+
+        .comparison-stat-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-500);
+            margin-bottom: 0.375rem;
+        }
+
+        .comparison-stat-value {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        .comparison-side.before .comparison-stat-value.highlight {
+            color: #dc2626;
+        }
+
+        .comparison-side.after .comparison-stat-value.highlight {
+            color: var(--green);
+        }
+
+        .comparison-arrow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .comparison-arrow svg {
+            width: 40px;
+            height: 40px;
+            color: var(--green);
+        }
+
+        .comparison-arrow span {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--green);
+        }
+
+        /* ========================================
+           FIT ASSESSMENT
+        ======================================== */
+        .fit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .fit-card {
+            border-radius: 16px;
+            padding: 2.5rem;
+        }
+
+        .fit-card.good {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.03) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .fit-card.caution {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+        }
+
+        .fit-card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .fit-card-icon {
+            width: 28px;
+            height: 28px;
+        }
+
+        .fit-card.good .fit-card-icon {
+            color: var(--green);
+        }
+
+        .fit-card.caution .fit-card-icon {
+            color: var(--gray-400);
+        }
+
+        .fit-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .fit-list {
+            list-style: none;
+        }
+
+        .fit-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            font-size: 0.9375rem;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+
+        .fit-list li:last-child {
+            border-bottom: none;
+        }
+
+        .fit-list-icon {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            margin-top: 0.125rem;
+        }
+
+        .fit-card.good .fit-list-icon {
+            color: var(--green);
+        }
+
+        .fit-card.caution .fit-list-icon {
+            color: var(--gray-400);
+        }
+
+        /* ========================================
+           PROCESS STEPS
+        ======================================== */
+        .process-timeline {
+            position: relative;
+            margin-top: 3rem;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 28px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gray-200);
+        }
+
+        .process-step {
+            display: flex;
+            gap: 2rem;
+            padding-bottom: 3rem;
+            position: relative;
+        }
+
+        .process-step:last-child {
+            padding-bottom: 0;
+        }
+
+        .process-step:last-child::after {
+            content: '';
+            position: absolute;
+            left: 28px;
+            top: 56px;
+            bottom: 0;
+            width: 2px;
+            background: var(--white);
+        }
+
+        .process-number {
+            width: 56px;
+            height: 56px;
+            background: var(--green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--white);
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .process-content {
+            flex: 1;
+            padding-top: 0.5rem;
+        }
+
+        .process-content h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .process-content p {
+            font-size: 0.9375rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+            max-width: 480px;
+        }
+
+        /* ========================================
+           FAQ ACCORDION
+        ======================================== */
+        .faq-list {
+            margin-top: 2.5rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .faq-question h3 {
+            font-size: 1.0625rem;
+            font-weight: 600;
+            color: var(--navy);
+            padding-right: 2rem;
+        }
+
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--gray-400);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+            color: var(--green);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-inner {
+            padding-bottom: 1.5rem;
+            font-size: 0.9375rem;
+            color: var(--gray-600);
+            line-height: 1.8;
+            max-width: 720px;
+        }
+
+        /* ========================================
+           CALCULATOR PREVIEW
+        ======================================== */
+        .calculator-preview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .calculator-content h2 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 500;
+            line-height: 1.3;
+            color: var(--white);
+            margin-bottom: 1.25rem;
+        }
+
+        .calculator-content p {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 2rem;
+        }
+
+        .calculator-mockup {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .calc-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .calc-header h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .calc-header p {
+            font-size: 0.8125rem;
+            color: var(--gray-500);
+        }
+
+        .calc-input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .calc-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-500);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .calc-input {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--navy);
+            background: var(--gray-50);
+        }
+
+        .calc-result {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .calc-result-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--green);
+            margin-bottom: 0.25rem;
+        }
+
+        .calc-result-value {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        .calc-cta {
+            width: 100%;
+            padding: 1rem;
+            background: var(--green);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            transition: all 0.25s ease;
+        }
+
+        .calc-cta:hover {
+            background: var(--green-dark);
+        }
+
+        /* ========================================
+           CTA SECTION
+        ======================================== */
+        .cta-section {
+            background: var(--navy);
+            padding: 5rem 3rem;
+        }
+
+        .cta-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .cta-left {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cta-eyebrow {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+
+        .cta-headline {
+            font-family: var(--font-serif);
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            font-weight: 500;
+            line-height: 1.2;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .cta-sub {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 320px;
+        }
+
+        .cta-divider {
+            width: 1px;
+            height: 160px;
+            background: linear-gradient(to bottom, 
+                transparent, 
+                rgba(255, 255, 255, 0.2) 20%, 
+                rgba(255, 255, 255, 0.2) 80%, 
+                transparent
+            );
+        }
+
+        .cta-right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .cta-right-label {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 500;
+            font-style: italic;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-schedule-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.75rem;
+            background: var(--green);
+            color: white;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.25s ease;
+        }
+
+        .cta-schedule-btn:hover {
+            background: var(--green-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+        }
+
+        .cta-schedule-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .cta-phone {
+            margin-top: 1rem;
+            font-size: 0.9375rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .cta-phone a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .cta-phone a:hover {
+            color: var(--green);
+        }
+
+        /* ========================================
+           RELATED SERVICES
+        ======================================== */
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .related-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 2rem;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .related-card:hover {
+            border-color: var(--green);
+            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .related-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .related-card p {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .related-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--green);
+        }
+
+        .related-link svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.2s ease;
+        }
+
+        .related-card:hover .related-link svg {
+            transform: translateX(4px);
+        }
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+        .footer {
+            background: var(--gray-50);
+            border-top: 1px solid var(--gray-200);
+            padding: 3rem 3rem 1.5rem;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.9375rem;
+            color: var(--gray-600);
+            margin-top: 1rem;
+            max-width: 280px;
+            line-height: 1.7;
+        }
+
+        .footer h4 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-900);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer ul a {
+            font-size: 0.9375rem;
+            color: var(--gray-600);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer ul a:hover {
+            color: var(--green);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--gray-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-legal {
+            font-size: 0.8125rem;
+            color: var(--gray-500);
+        }
+
+        .footer-badges {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .footer-badges span {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--gray-500);
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+        }
+
+        .footer-badges svg {
+            width: 16px;
+            height: 16px;
+            color: var(--green);
+        }
+
+        /* ========================================
+           RESPONSIVE
+        ======================================== */
+        @media (max-width: 1024px) {
+            .nav-phone {
+                display: none;
+            }
+
+            .problem-grid,
+            .calculator-preview {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .methods-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-visual {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .comparison-arrow {
+                transform: rotate(90deg);
+            }
+
+            .fit-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-inner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .cta-divider {
+                width: 80px;
+                height: 1px;
+                margin: 0 auto;
+                background: linear-gradient(to right, 
+                    transparent, 
+                    rgba(255, 255, 255, 0.2) 20%, 
+                    rgba(255, 255, 255, 0.2) 80%, 
+                    transparent
+                );
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu,
+            .nav-phone {
+                display: none;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-inner {
+                height: 64px;
+            }
+
+            .page-hero-content {
+                padding: 0 1.5rem;
+            }
+
+            .page-hero-actions {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .content-section {
+                padding: 3.5rem 1.5rem;
+            }
+
+            .content-section.gray-bg .section-inner,
+            .content-section.navy-bg .section-inner {
+                padding: 0 1.5rem;
+            }
+
+            .process-timeline::before {
+                left: 20px;
+            }
+
+            .process-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .process-step {
+                gap: 1.25rem;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-mark">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.3"/>
+                        <path d="M8 22 C8 22 14 12 20 12 C26 12 32 22 32 22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        <circle cx="20" cy="16" r="4" fill="currentColor"/>
+                    </svg>
+                </div>
+                <span class="logo-text">Horizon</span>
+            </a>
+
+            <div class="nav-menu">
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        Products
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </a>
+                    <div class="nav-dropdown">
+                        <a href="financial-restoration.html" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                            </div>
+                            <div class="dropdown-content">
+                                <h4>Financial Restoration</h4>
+                                <p>Challenge inaccurate debts through consumer protection law</p>
+                            </div>
+                        </a>
+                        <a href="debt-consolidation.html" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                    <path d="M12 10v4"/>
+                                    <path d="M10 12h4"/>
+                                </svg>
+                            </div>
+                            <div class="dropdown-content">
+                                <h4>Debt Consolidation</h4>
+                                <p>Combine multiple debts into one manageable payment</p>
+                            </div>
+                        </a>
+                        <a href="credit-counseling.html" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                            <div class="dropdown-content">
+                                <h4>Credit Counseling</h4>
+                                <p>One-on-one guidance to build better financial habits</p>
+                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="personal-loans.html" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="1" x2="12" y2="23"/>
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                </svg>
+                            </div>
+                            <div class="dropdown-content">
+                                <h4>Personal Loans</h4>
+                                <p>Access funds when you need them, no collateral required</p>
+                            </div>
+                        </a>
+                        <a href="bankruptcy.html" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M12 16v-4"/>
+                                    <path d="M12 8h.01"/>
+                                </svg>
+                            </div>
+                            <div class="dropdown-content">
+                                <h4>Bankruptcy Info</h4>
+                                <p>Understand your options when you need a fresh start</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="#" class="nav-link">In The News</a>
+                <a href="#" class="nav-link">Support</a>
+                <a href="#" class="nav-link">Contact</a>
+            </div>
+
+            <div class="nav-right">
+                <div class="nav-phone">
+                    <span class="nav-phone-label">Call Us</span>
+                    <a href="tel:8005550199" class="nav-phone-number">(800) 555-0199</a>
+                </div>
+                <a href="#consultation" class="nav-cta">Free Consultation</a>
+            </div>
+
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-bg">
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&q=80&auto=format&fit=crop" alt="">
+        </div>
+        <div class="page-hero-overlay"></div>
+        
+        <div class="page-hero-content">
+            <div class="page-hero-breadcrumb">
+                <a href="horizon-v3.html">Home</a>
+                <span>/</span>
+                <span>Debt Consolidation</span>
+            </div>
+            
+            <h1>Multiple debts. One payment. Finally, some breathing room.</h1>
+            
+            <p class="page-hero-sub">Juggling payments across credit cards, medical bills, and other debts? Consolidation combines them into a single, manageable paymentâ€”often at a lower interest rateâ€”so you can see the finish line.</p>
+            
+            <div class="page-hero-actions">
+                <a href="#" class="btn-primary">
+                    See Your Options
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="tel:1-800-555-0199" class="btn-secondary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    1-800-555-0199
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Problem Visual -->
+    <section class="content-section">
+        <div class="problem-grid">
+            <div class="problem-visual">
+                <div class="bills-stack">
+                    <div class="bill-item">
+                        <div class="bill-info">
+                            <div class="bill-icon cc">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                                    <line x1="1" y1="10" x2="23" y2="10"/>
+                                </svg>
+                            </div>
+                            <span class="bill-name">Credit Card #1</span>
+                        </div>
+                        <div class="bill-details">
+                            <div class="bill-amount">$8,400</div>
+                            <div class="bill-rate">24.99% APR</div>
+                        </div>
+                    </div>
+                    <div class="bill-item">
+                        <div class="bill-info">
+                            <div class="bill-icon cc">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                                    <line x1="1" y1="10" x2="23" y2="10"/>
+                                </svg>
+                            </div>
+                            <span class="bill-name">Credit Card #2</span>
+                        </div>
+                        <div class="bill-details">
+                            <div class="bill-amount">$5,200</div>
+                            <div class="bill-rate">21.49% APR</div>
+                        </div>
+                    </div>
+                    <div class="bill-item">
+                        <div class="bill-info">
+                            <div class="bill-icon medical">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                                </svg>
+                            </div>
+                            <span class="bill-name">Medical Bills</span>
+                        </div>
+                        <div class="bill-details">
+                            <div class="bill-amount">$3,800</div>
+                            <div class="bill-rate">0% (for now)</div>
+                        </div>
+                    </div>
+                    <div class="bill-item">
+                        <div class="bill-info">
+                            <div class="bill-icon store">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="9" cy="21" r="1"/>
+                                    <circle cx="20" cy="21" r="1"/>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                                </svg>
+                            </div>
+                            <span class="bill-name">Store Card</span>
+                        </div>
+                        <div class="bill-details">
+                            <div class="bill-amount">$2,600</div>
+                            <div class="bill-rate">29.99% APR</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="arrow-down">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"/>
+                        <polyline points="19 12 12 19 5 12"/>
+                    </svg>
+                </div>
+                
+                <div class="consolidated-result">
+                    <div class="consolidated-label">One Monthly Payment</div>
+                    <div class="consolidated-amount">$487/mo</div>
+                    <div class="consolidated-details">at <span>11.9% APR</span> â€¢ Paid off in 48 months</div>
+                </div>
+            </div>
+            
+            <div class="problem-content">
+                <span class="section-label">The Challenge</span>
+                <h2>When every bill has a different due date, rate, and minimumâ€”it's exhausting.</h2>
+                <p>You're not bad with money. You're just drowning in logistics. Four cards, three due dates, interest rates you can barely track. Every month feels like a juggling act where one missed catch sends everything tumbling.</p>
+                <p>Consolidation isn't about hiding from debtâ€”it's about organizing it into something you can actually manage and pay off.</p>
+                
+                <ul class="benefit-list">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        One payment, one due date, one rate
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Often a lower overall interest rate
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        A clear payoff date you can count down to
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Less mental load, more breathing room
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consolidation Methods -->
+    <section class="content-section gray-bg">
+        <div class="section-inner">
+            <span class="section-label">Your Options</span>
+            <h2 class="section-title">There's more than one way to consolidate. Here's what we work with.</h2>
+            <p class="section-intro">The right approach depends on your credit, your debt amount, and what you're comfortable with. We'll help you understand which path makes the most sense.</p>
+            
+            <div class="methods-grid">
+                <div class="method-card">
+                    <div class="method-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="5" width="20" height="14" rx="2"/>
+                            <line x1="2" y1="10" x2="22" y2="10"/>
+                        </svg>
+                    </div>
+                    <h3>Debt Consolidation Loan</h3>
+                    <p>A personal loan used specifically to pay off multiple debts at once, leaving you with one fixed monthly payment at (ideally) a lower rate.</p>
+                    <ul class="method-pros">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Fixed rate and payment
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Clear payoff timeline
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Works for various credit profiles
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="method-card">
+                    <div class="method-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                            <line x1="1" y1="10" x2="23" y2="10"/>
+                        </svg>
+                    </div>
+                    <h3>Balance Transfer</h3>
+                    <p>Move high-interest credit card debt to a card with a 0% introductory APR. You pay down principal faster during the promo period.</p>
+                    <ul class="method-pros">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            0% interest for 12-21 months
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Best for good credit scores
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            No new loan required
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="method-card">
+                    <div class="method-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Debt Management Plan</h3>
+                    <p>Work with a credit counseling agency who negotiates lower rates with your creditors. You make one payment to them; they distribute to creditors.</p>
+                    <ul class="method-pros">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Reduced interest rates
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            No new credit required
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Built-in financial coaching
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Comparison -->
+    <section class="content-section">
+        <span class="section-label">The Difference</span>
+        <h2 class="section-title">What consolidation actually looks likeâ€”in real numbers.</h2>
+        <p class="section-intro">Here's a typical scenario: $20,000 in credit card debt spread across four cards. Same debt, very different experience.</p>
+        
+        <div class="comparison-visual">
+            <div class="comparison-side before">
+                <div class="comparison-header">
+                    <div class="comparison-header-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="15" y1="9" x2="9" y2="15"/>
+                            <line x1="9" y1="9" x2="15" y2="15"/>
+                        </svg>
+                    </div>
+                    <h3>Before Consolidation</h3>
+                </div>
+                <div class="comparison-stat">
+                    <div class="comparison-stat-label">Monthly Payments</div>
+                    <div class="comparison-stat-value">4 different due dates</div>
+                </div>
+                <div class="comparison-stat">
+                    <div class="comparison-stat-label">Average Interest Rate</div>
+                    <div class="comparison-stat-value highlight">22.4% APR</div>
+                </div>
+                <div class="comparison-stat">
+                    <div class="comparison-stat-label">Time to Pay Off</div>
+                    <div class="comparison-stat-value">10+ years (minimums only)</div>
+                </div>
+                <div class="comparison-stat">
+                    <div class="comparison-stat-label">Total Interest Paid</div>
+                    <div class="comparison-stat-value highlight">$19,400+</div>
+                </div>
+            </div>
+            
+            <div class="comparison-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                    <polyline points="12 5 19 12 12 19"/>
+                </svg>
+                <span>After</span>
+            </div>
+            
+            <div class="comparison-side after">
+                <div class="comparison-header">
+                    <div class="comparison-header-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <h3>After Consolidation</h3>
+                </div>
+                <div class="comparison-stat">
+                    <div class="comparison-stat-label">Monthly Payments</div>
+                    <div class="comparison-stat-value">1 payment: $487/mo</div>
+                </div>
+                <div class="comparison-stat">
+                    <div class="comparison-stat-label">Interest Rate</div>
+                    <div class="comparison-stat-value highlight">11.9% APR</div>
+                </div>
+                <div class="comparison-stat">
+                    <div class="comparison-stat-label">Time to Pay Off</div>
+                    <div class="comparison-stat-value">48 months exactly</div>
+                </div>
+                <div class="comparison-stat">
+                    <div class="comparison-stat-label">Total Interest Paid</div>
+                    <div class="comparison-stat-value highlight">$3,376</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Is This Right For You -->
+    <section class="content-section gray-bg">
+        <div class="section-inner">
+            <span class="section-label">Is This Right For You?</span>
+            <h2 class="section-title">Consolidation works well for some situationsâ€”not all. Here's how to know.</h2>
+            
+            <div class="fit-grid">
+                <div class="fit-card good">
+                    <div class="fit-card-header">
+                        <svg class="fit-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        <h3>Consolidation might be right if...</h3>
+                    </div>
+                    <ul class="fit-list">
+                        <li>
+                            <svg class="fit-list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            You're juggling multiple debts with different rates and due dates
+                        </li>
+                        <li>
+                            <svg class="fit-list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            You can commit to not adding new debt during payoff
+                        </li>
+                        <li>
+                            <svg class="fit-list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            You'd qualify for a lower interest rate than you're currently paying
+                        </li>
+                        <li>
+                            <svg class="fit-list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            You have steady income to make consistent payments
+                        </li>
+                        <li>
+                            <svg class="fit-list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            The mental simplification alone would help you stay on track
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="fit-card caution">
+                    <div class="fit-card-header">
+                        <svg class="fit-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        <h3>Another approach might work better if...</h3>
+                    </div>
+                    <ul class="fit-list">
+                        <li>
+                            <svg class="fit-list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"/>
+                                <line x1="6" y1="6" x2="18" y2="18"/>
+                            </svg>
+                            You're not sure the debt itself is valid (consider Financial Restoration first)
+                        </li>
+                        <li>
+                            <svg class="fit-list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"/>
+                                <line x1="6" y1="6" x2="18" y2="18"/>
+                            </svg>
+                            Your income is unstable or you're between jobs
+                        </li>
+                        <li>
+                            <svg class="fit-list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"/>
+                                <line x1="6" y1="6" x2="18" y2="18"/>
+                            </svg>
+                            You wouldn't qualify for a better rate than you have now
+                        </li>
+                        <li>
+                            <svg class="fit-list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"/>
+                                <line x1="6" y1="6" x2="18" y2="18"/>
+                            </svg>
+                            The total debt is so overwhelming that consolidation won't solve it
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work -->
+    <section class="content-section">
+        <span class="section-label">Our Process</span>
+        <h2 class="section-title">How we help you consolidateâ€”step by step.</h2>
+        
+        <div class="process-timeline">
+            <div class="process-step">
+                <div class="process-number">1</div>
+                <div class="process-content">
+                    <h3>We Listen First</h3>
+                    <p>Tell us about your debts, your income, and what's keeping you up at night. No judgmentâ€”just understanding where you are so we can figure out where to go.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-number">2</div>
+                <div class="process-content">
+                    <h3>We Map Your Options</h3>
+                    <p>Based on your situation, we'll show you which consolidation methods could workâ€”and which probably won't. We're honest about what makes sense.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-number">3</div>
+                <div class="process-content">
+                    <h3>We Run the Numbers</h3>
+                    <p>You'll see exactly what your new payment could be, how much you'd save in interest, and when you'd be debt-free. Real numbers, not vague promises.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-number">4</div>
+                <div class="process-content">
+                    <h3>You Decide</h3>
+                    <p>Armed with information, you choose the path that feels right. We guide you through the application or enrollment process and stay with you until it's done.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator CTA -->
+    <section class="content-section navy-bg">
+        <div class="section-inner">
+            <div class="calculator-preview">
+                <div class="calculator-content">
+                    <span class="section-label">See Your Numbers</span>
+                    <h2>Curious what consolidation could look like for you?</h2>
+                    <p>Our calculator shows you real estimates based on your actual debtâ€”current payments vs. consolidated payment, interest saved, time to payoff. No signup required to see the math.</p>
+                    <a href="#" class="btn-primary">
+                        Try the Calculator
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="calculator-mockup">
+                    <div class="calc-header">
+                        <h4>Consolidation Calculator</h4>
+                        <p>See your potential savings</p>
+                    </div>
+                    <div class="calc-input-group">
+                        <label class="calc-label">Total Debt Amount</label>
+                        <input type="text" class="calc-input" value="$20,000" readonly>
+                    </div>
+                    <div class="calc-input-group">
+                        <label class="calc-label">Average Current APR</label>
+                        <input type="text" class="calc-input" value="22.4%" readonly>
+                    </div>
+                    <div class="calc-input-group">
+                        <label class="calc-label">Estimated New APR</label>
+                        <input type="text" class="calc-input" value="11.9%" readonly>
+                    </div>
+                    <div class="calc-result">
+                        <div class="calc-result-label">Estimated Interest Savings</div>
+                        <div class="calc-result-value">$16,024</div>
+                    </div>
+                    <button class="calc-cta">Get Your Personalized Estimate</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="content-section">
+        <span class="section-label">Questions</span>
+        <h2 class="section-title">Common questions about debt consolidation</h2>
+        
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <h3>Will consolidation hurt my credit score?</h3>
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"/>
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        It depends on the method. A new loan or credit card may cause a small, temporary dip from the hard inquiry. But over time, consolidation often helps your scoreâ€”by reducing your credit utilization and creating a consistent payment history. The key is not adding new debt to those old cards once they're paid off.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <h3>What's the difference between consolidation and settlement?</h3>
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"/>
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Very different. Consolidation means you're still paying what you oweâ€”just reorganized into one payment at a better rate. Settlement means negotiating to pay less than you owe, which impacts your credit and may have tax implications. We don't offer debt settlement; we focus on approaches that protect your credit.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <h3>How much debt do I need to make consolidation worthwhile?</h3>
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"/>
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        There's no magic number, but consolidation typically makes sense when you have multiple debts totaling $5,000 or more, especially if they're at high interest rates. Below that, the simplification might be nice but the savings may be minimal. We'll help you figure out if the math works for your situation.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <h3>What if I have bad credit?</h3>
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"/>
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        You still have options. A debt management plan through credit counseling doesn't require good creditâ€”creditors agree to lower rates based on your enrollment, not your score. Some consolidation loans work with lower credit scores too, though rates won't be as favorable. We'll show you what's realistic for your situation.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <h3>Can I consolidate student loans or mortgage debt?</h3>
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"/>
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Our consolidation services focus on unsecured debtâ€”credit cards, medical bills, personal loans, and similar. Student loans have their own federal consolidation programs, and mortgage refinancing is a separate process. We can point you in the right direction if those apply to your situation.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <h3>How long does the process take?</h3>
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"/>
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        It depends on the method. A consolidation loan can be funded in a few days to a couple weeks. Balance transfers are usually quick once approved. Debt management plans take a bit longer to set upâ€”typically 2-4 weeksâ€”as the agency coordinates with your creditors. We'll give you realistic timelines for your specific path.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-inner">
+            <div class="cta-left">
+                <span class="cta-eyebrow">Ready to simplify?</span>
+                <h2 class="cta-headline">One payment.<br>One rate.<br>One clear finish line.</h2>
+                <p class="cta-sub">Let's look at your options togetherâ€”no commitment, just clarity.</p>
+            </div>
+            <div class="cta-divider"></div>
+            <div class="cta-right">
+                <p class="cta-right-label">Free consultation</p>
+                <a href="#" class="cta-schedule-btn">
+                    See Your Options
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <p class="cta-phone">or call <a href="tel:1-800-555-0199">1-800-555-0199</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="content-section">
+        <span class="section-label">Explore More</span>
+        <h2 class="section-title">Other ways we can help</h2>
+        
+        <div class="related-grid">
+            <a href="#" class="related-card">
+                <h3>Financial Restoration</h3>
+                <p>Before you consolidate, make sure you actually owe what they say you owe. We can verify debts and challenge invalid claims under the FDCPA.</p>
+                <span class="related-link">
+                    Learn more
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </span>
+            </a>
+            <a href="horizon-personal-loans.html" class="related-card">
+                <h3>Personal Loans</h3>
+                <p>Need funds for something other than consolidation? We can help you find unsecured loan options that fit your situation.</p>
+                <span class="related-link">
+                    Learn more
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </span>
+            </a>
+            <a href="#" class="related-card">
+                <h3>Credit Counseling</h3>
+                <p>Want guidance on managing money and staying debt-free after you've consolidated? Our counseling helps you build lasting habits.</p>
+                <span class="related-link">
+                    Learn more
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <div class="logo-mark" style="color: var(--green);">
+                        <svg viewBox="0 0 40 40" fill="none">
+                            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.3"/>
+                            <path d="M8 22 C8 22 14 12 20 12 C26 12 32 22 32 22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <circle cx="20" cy="16" r="4" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text" style="color: var(--navy);">Horizon</span>
+                </a>
+                <p>Helping people find their path forward since 2012.</p>
+            </div>
+            <div>
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="financial-restoration.html">Financial Restoration</a></li>
+                    <li><a href="debt-consolidation.html">Debt Consolidation</a></li>
+                    <li><a href="credit-counseling.html">Credit Counseling</a></li>
+                    <li><a href="bankruptcy.html">Bankruptcy Info</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Disclosures</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-legal">© 2024 Horizon Financial Services. All rights reserved.</p>
+            <div class="footer-badges">
+                <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    A+ BBB
+                </span>
+                <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                    IAPDA Certified
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all items
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    faq.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
