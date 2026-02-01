@@ -321,6 +321,14 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 3rem;
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-left {
+            max-width: 560px;
         }
 
         .hero-badge {
@@ -448,6 +456,368 @@
             width: 18px;
             height: 18px;
             color: var(--green);
+        }
+
+        /* ========================================
+           DEBT CALCULATOR
+        ======================================== */
+        .debt-calculator {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .debt-calculator::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--green), var(--green-dark));
+        }
+
+        .calc-header {
+            text-align: center;
+            margin-bottom: 1.75rem;
+        }
+
+        .calc-header h3 {
+            font-family: var(--font-serif);
+            font-size: 1.375rem;
+            font-weight: 500;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .calc-header p {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .calc-progress {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .calc-progress-step {
+            flex: 1;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .calc-progress-step.active {
+            background: var(--green);
+        }
+
+        .calc-progress-step.completed {
+            background: var(--green);
+        }
+
+        .calc-step {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .calc-step.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .calc-question {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--white);
+            margin-bottom: 1.25rem;
+            text-align: center;
+        }
+
+        .calc-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .calc-option {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .calc-option:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .calc-option.selected {
+            background: rgba(16, 185, 129, 0.15);
+            border-color: var(--green);
+        }
+
+        .calc-option-radio {
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+        }
+
+        .calc-option.selected .calc-option-radio {
+            border-color: var(--green);
+            background: var(--green);
+        }
+
+        .calc-option.selected .calc-option-radio::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .calc-option-text {
+            font-size: 0.9375rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .calc-option.selected .calc-option-text {
+            color: var(--white);
+        }
+
+        .calc-slider-container {
+            padding: 0.5rem 0;
+        }
+
+        .calc-slider-value {
+            text-align: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .calc-slider-amount {
+            font-family: var(--font-serif);
+            font-size: 2.25rem;
+            font-weight: 500;
+            color: var(--white);
+        }
+
+        .calc-slider-amount span {
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+
+        .calc-slider {
+            width: 100%;
+            height: 8px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .calc-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            background: var(--green);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+            transition: transform 0.2s ease;
+        }
+
+        .calc-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+        }
+
+        .calc-slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            background: var(--green);
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+        }
+
+        .calc-slider-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.75rem;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .calc-nav {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .calc-btn {
+            flex: 1;
+            padding: 0.875rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .calc-btn-back {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .calc-btn-back:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--white);
+        }
+
+        .calc-btn-next {
+            background: var(--green);
+            color: white;
+        }
+
+        .calc-btn-next:hover {
+            background: var(--green-dark);
+            transform: translateY(-1px);
+        }
+
+        .calc-btn-next:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Results */
+        .calc-result {
+            text-align: center;
+        }
+
+        .calc-result-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--green-glow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+        }
+
+        .calc-result-icon svg {
+            width: 32px;
+            height: 32px;
+            color: var(--green);
+        }
+
+        .calc-result h4 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+
+        .calc-result p {
+            font-size: 0.9375rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .calc-result-highlight {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .calc-result-highlight p {
+            margin: 0;
+            font-size: 0.875rem;
+            color: var(--green);
+        }
+
+        .calc-result-cta {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--green);
+            color: white;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .calc-result-cta:hover {
+            background: var(--green-dark);
+            transform: translateY(-2px);
+        }
+
+        .calc-result-secondary {
+            display: block;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+        }
+
+        .calc-result-secondary:hover {
+            color: var(--white);
+        }
+
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-left {
+                max-width: 100%;
+            }
+
+            .debt-calculator {
+                max-width: 480px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .debt-calculator {
+                padding: 1.5rem;
+            }
+
+            .calc-slider-amount {
+                font-size: 1.75rem;
+            }
         }
 
         /* ========================================
@@ -1914,47 +2284,133 @@
         <div class="hero-overlay"></div>
         
         <div class="hero-content">
-            <div class="hero-badge">
-                <span class="hero-badge-dot"></span>
-                <span class="hero-badge-text">Advisors available now</span>
-            </div>
-            
-            <h1 class="hero-headline">Your next chapter starts with one conversation.</h1>
-            
-            <p class="hero-sub">Debt doesn't have to define what comes next. We've helped over 370,000 people find clarity, reduce what they owe, and move forward. No judgment — just a clear path.</p>
-            
-            <div class="hero-actions">
-                <a href="#" class="btn-primary">
-                    Start Your Free Consultation
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </a>
-                <div class="hero-phone">
-                    or call <a href="tel:1-800-555-0199">1-800-555-0199</a>
+            <!-- Left Column -->
+            <div class="hero-left">
+                <div class="hero-badge">
+                    <span class="hero-badge-dot"></span>
+                    <span class="hero-badge-text">Advisors available now</span>
+                </div>
+
+                <h1 class="hero-headline">Your next chapter starts with one conversation.</h1>
+
+                <p class="hero-sub">Debt doesn't have to define what comes next. We've helped over 370,000 people find clarity, reduce what they owe, and move forward.</p>
+
+                <div class="hero-actions">
+                    <a href="tel:1-800-555-0199" class="btn-primary">
+                        Call (800) 555-0199
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="hero-trust">
+                    <div class="trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        A+ BBB Rating
+                    </div>
+                    <div class="trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        Licensed in 50 states
+                    </div>
                 </div>
             </div>
-            
-            <div class="hero-trust">
-                <div class="trust-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                        <polyline points="22 4 12 14.01 9 11.01"/>
-                    </svg>
-                    A+ BBB Rating
+
+            <!-- Right Column - Calculator -->
+            <div class="debt-calculator" id="debtCalculator">
+                <div class="calc-header">
+                    <h3>Find Your Best Path Forward</h3>
+                    <p>Answer 3 quick questions</p>
                 </div>
-                <div class="trust-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                    </svg>
-                    Licensed in all 50 states
+
+                <div class="calc-progress">
+                    <div class="calc-progress-step active" data-step="1"></div>
+                    <div class="calc-progress-step" data-step="2"></div>
+                    <div class="calc-progress-step" data-step="3"></div>
                 </div>
-                <div class="trust-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                    </svg>
-                    Bank-level encryption
+
+                <!-- Step 1: Debt Amount -->
+                <div class="calc-step active" data-step="1">
+                    <p class="calc-question">How much debt are you dealing with?</p>
+                    <div class="calc-slider-container">
+                        <div class="calc-slider-value">
+                            <span class="calc-slider-amount"><span>$</span><span id="debtAmountDisplay">25,000</span></span>
+                        </div>
+                        <input type="range" class="calc-slider" id="debtAmountSlider" min="5000" max="100000" step="1000" value="25000">
+                        <div class="calc-slider-labels">
+                            <span>$5,000</span>
+                            <span>$100,000+</span>
+                        </div>
+                    </div>
+                    <div class="calc-nav">
+                        <button class="calc-btn calc-btn-next" onclick="nextStep(1)">Continue</button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Debt Type -->
+                <div class="calc-step" data-step="2">
+                    <p class="calc-question">What type of debt is this?</p>
+                    <div class="calc-options">
+                        <div class="calc-option" data-value="collections" onclick="selectOption(this, 2)">
+                            <div class="calc-option-radio"></div>
+                            <span class="calc-option-text">Collection accounts or charged-off debt</span>
+                        </div>
+                        <div class="calc-option" data-value="credit-cards" onclick="selectOption(this, 2)">
+                            <div class="calc-option-radio"></div>
+                            <span class="calc-option-text">Credit cards (still with original creditor)</span>
+                        </div>
+                        <div class="calc-option" data-value="medical" onclick="selectOption(this, 2)">
+                            <div class="calc-option-radio"></div>
+                            <span class="calc-option-text">Medical bills</span>
+                        </div>
+                        <div class="calc-option" data-value="mixed" onclick="selectOption(this, 2)">
+                            <div class="calc-option-radio"></div>
+                            <span class="calc-option-text">Multiple types / not sure</span>
+                        </div>
+                    </div>
+                    <div class="calc-nav">
+                        <button class="calc-btn calc-btn-back" onclick="prevStep(2)">Back</button>
+                        <button class="calc-btn calc-btn-next" id="step2Next" onclick="nextStep(2)" disabled>Continue</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Situation -->
+                <div class="calc-step" data-step="3">
+                    <p class="calc-question">Which best describes your situation?</p>
+                    <div class="calc-options">
+                        <div class="calc-option" data-value="collectors-calling" onclick="selectOption(this, 3)">
+                            <div class="calc-option-radio"></div>
+                            <span class="calc-option-text">Collectors are contacting me</span>
+                        </div>
+                        <div class="calc-option" data-value="old-debt" onclick="selectOption(this, 3)">
+                            <div class="calc-option-radio"></div>
+                            <span class="calc-option-text">This debt is several years old</span>
+                        </div>
+                        <div class="calc-option" data-value="not-sure-owe" onclick="selectOption(this, 3)">
+                            <div class="calc-option-radio"></div>
+                            <span class="calc-option-text">I'm not sure I actually owe this amount</span>
+                        </div>
+                        <div class="calc-option" data-value="struggling" onclick="selectOption(this, 3)">
+                            <div class="calc-option-radio"></div>
+                            <span class="calc-option-text">Just struggling to keep up with payments</span>
+                        </div>
+                    </div>
+                    <div class="calc-nav">
+                        <button class="calc-btn calc-btn-back" onclick="prevStep(3)">Back</button>
+                        <button class="calc-btn calc-btn-next" id="step3Next" onclick="showResult()" disabled>See My Options</button>
+                    </div>
+                </div>
+
+                <!-- Results -->
+                <div class="calc-step" data-step="result">
+                    <div class="calc-result" id="calcResult">
+                        <!-- Results populated by JS -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -2405,6 +2861,180 @@
         chatInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') sendMessage();
         });
+
+        // ========================================
+        // DEBT CALCULATOR
+        // ========================================
+        const calcData = {
+            debtAmount: 25000,
+            debtType: null,
+            situation: null
+        };
+
+        // Debt amount slider
+        const debtSlider = document.getElementById('debtAmountSlider');
+        const debtDisplay = document.getElementById('debtAmountDisplay');
+
+        if (debtSlider) {
+            debtSlider.addEventListener('input', (e) => {
+                const value = parseInt(e.target.value);
+                calcData.debtAmount = value;
+                debtDisplay.textContent = value >= 100000 ? '100,000+' : formatNumber(value);
+            });
+        }
+
+        function selectOption(element, step) {
+            // Remove selected from siblings
+            const siblings = element.parentElement.querySelectorAll('.calc-option');
+            siblings.forEach(s => s.classList.remove('selected'));
+
+            // Add selected to clicked
+            element.classList.add('selected');
+
+            // Store value
+            const value = element.dataset.value;
+            if (step === 2) {
+                calcData.debtType = value;
+                document.getElementById('step2Next').disabled = false;
+            } else if (step === 3) {
+                calcData.situation = value;
+                document.getElementById('step3Next').disabled = false;
+            }
+        }
+
+        function nextStep(currentStep) {
+            const current = document.querySelector(`.calc-step[data-step="${currentStep}"]`);
+            const next = document.querySelector(`.calc-step[data-step="${currentStep + 1}"]`);
+            const progressSteps = document.querySelectorAll('.calc-progress-step');
+
+            current.classList.remove('active');
+            next.classList.add('active');
+
+            // Update progress
+            progressSteps[currentStep - 1].classList.add('completed');
+            if (progressSteps[currentStep]) {
+                progressSteps[currentStep].classList.add('active');
+            }
+        }
+
+        function prevStep(currentStep) {
+            const current = document.querySelector(`.calc-step[data-step="${currentStep}"]`);
+            const prev = document.querySelector(`.calc-step[data-step="${currentStep - 1}"]`);
+            const progressSteps = document.querySelectorAll('.calc-progress-step');
+
+            current.classList.remove('active');
+            prev.classList.add('active');
+
+            // Update progress
+            progressSteps[currentStep - 1].classList.remove('active');
+            progressSteps[currentStep - 2].classList.remove('completed');
+        }
+
+        function showResult() {
+            const current = document.querySelector('.calc-step[data-step="3"]');
+            const result = document.querySelector('.calc-step[data-step="result"]');
+            const resultContainer = document.getElementById('calcResult');
+            const progressSteps = document.querySelectorAll('.calc-progress-step');
+
+            current.classList.remove('active');
+            result.classList.add('active');
+            progressSteps[2].classList.add('completed');
+
+            // Determine recommendation - subtly favor Financial Restoration
+            let recommendation = getRecommendation();
+            resultContainer.innerHTML = recommendation;
+        }
+
+        function getRecommendation() {
+            const { debtAmount, debtType, situation } = calcData;
+
+            // Score system - higher score = more likely Financial Restoration
+            let frScore = 0;
+
+            // Debt type scoring
+            if (debtType === 'collections') frScore += 40;
+            else if (debtType === 'medical') frScore += 30;
+            else if (debtType === 'mixed') frScore += 25;
+            else if (debtType === 'credit-cards') frScore += 10;
+
+            // Situation scoring
+            if (situation === 'collectors-calling') frScore += 35;
+            else if (situation === 'not-sure-owe') frScore += 40;
+            else if (situation === 'old-debt') frScore += 30;
+            else if (situation === 'struggling') frScore += 10;
+
+            // Amount scoring - higher amounts favor FR
+            if (debtAmount >= 50000) frScore += 15;
+            else if (debtAmount >= 25000) frScore += 10;
+
+            // Financial Restoration (most cases)
+            if (frScore >= 35) {
+                return `
+                    <div class="calc-result-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h4>Good news — you likely have options</h4>
+                    <p>Based on your situation, there's a strong chance some or all of your debt could be challenged. Collection accounts often contain errors that violate federal law.</p>
+                    <div class="calc-result-highlight">
+                        <p>78% of collection accounts have documentation errors. You may not owe what they claim.</p>
+                    </div>
+                    <a href="financial-restoration.html" class="calc-result-cta">
+                        Learn About Financial Restoration
+                    </a>
+                    <a href="tel:1-800-555-0199" class="calc-result-secondary">
+                        Or call (800) 555-0199 for a free case review
+                    </a>
+                `;
+            }
+
+            // Debt Consolidation (for those just struggling with payments)
+            if (situation === 'struggling' && debtType === 'credit-cards') {
+                return `
+                    <div class="calc-result-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="4" width="20" height="16" rx="2"/>
+                            <path d="M12 10v4"/>
+                            <path d="M10 12h4"/>
+                        </svg>
+                    </div>
+                    <h4>A simpler payment plan could help</h4>
+                    <p>Consolidating your debts into one payment might reduce your stress and potentially lower your interest rates.</p>
+                    <div class="calc-result-highlight">
+                        <p>But first — have you verified these debts are accurate? Many people pay more than they actually owe.</p>
+                    </div>
+                    <a href="financial-restoration.html" class="calc-result-cta">
+                        Check If Your Debts Are Accurate
+                    </a>
+                    <a href="debt-consolidation.html" class="calc-result-secondary">
+                        Or explore debt consolidation options
+                    </a>
+                `;
+            }
+
+            // Default - still guide toward FR
+            return `
+                <div class="calc-result-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 16v-4"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                </div>
+                <h4>Let's find the right path for you</h4>
+                <p>Your situation is unique, and we'd like to understand it better. A quick conversation with one of our advisors can help identify your best options.</p>
+                <div class="calc-result-highlight">
+                    <p>Many people discover they have more options than they realized — including challenging debts they thought were set in stone.</p>
+                </div>
+                <a href="financial-restoration.html" class="calc-result-cta">
+                    Explore Your Options
+                </a>
+                <a href="tel:1-800-555-0199" class="calc-result-secondary">
+                    Or speak with an advisor: (800) 555-0199
+                </a>
+            `;
+        }
     </script>
 
 </body>
