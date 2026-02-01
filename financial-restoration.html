@@ -543,11 +543,50 @@
             display: flex;
             gap: 1.25rem;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reality-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.08;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        .reality-card:hover::before {
+            opacity: 0.15;
+        }
+
+        .reality-card > * {
+            position: relative;
+            z-index: 1;
         }
 
         .reality-card:hover {
             background: var(--white);
             box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+        }
+
+        /* Individual card backgrounds */
+        .reality-card.documentation::before {
+            background-image: url('https://images.unsplash.com/photo-1568667256549-094345857637?w=800&q=80');
+        }
+
+        .reality-card.time-limits::before {
+            background-image: url('https://images.unsplash.com/photo-1501139083538-0139583c060f?w=800&q=80');
+        }
+
+        .reality-card.inflated::before {
+            background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80');
+        }
+
+        .reality-card.wrong-person::before {
+            background-image: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80');
         }
 
         .reality-icon {
@@ -1485,7 +1524,7 @@
             </p>
             
             <div class="reality-grid">
-                <div class="reality-card">
+                <div class="reality-card documentation">
                     <div class="reality-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
@@ -1499,8 +1538,8 @@
                         <p>Original account records often don't survive the buying and selling of debt. Without proper documentation, collectors may have no legal right to collect.</p>
                     </div>
                 </div>
-                
-                <div class="reality-card">
+
+                <div class="reality-card time-limits">
                     <div class="reality-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="10"/>
@@ -1512,8 +1551,8 @@
                         <p>Every debt has a statute of limitations. Once it expires, collectors lose their ability to sue — but many try to collect anyway.</p>
                     </div>
                 </div>
-                
-                <div class="reality-card">
+
+                <div class="reality-card inflated">
                     <div class="reality-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 2v4"/>
@@ -1531,8 +1570,8 @@
                         <p>Unauthorized fees, incorrect interest calculations, and duplicate charges are common. You may owe far less than they claim — or nothing at all.</p>
                     </div>
                 </div>
-                
-                <div class="reality-card">
+
+                <div class="reality-card wrong-person">
                     <div class="reality-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
