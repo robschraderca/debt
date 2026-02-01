@@ -1,0 +1,2239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support & Resources | Horizon Financial Services</title>
+    <meta name="description" content="Access your Horizon debt portal, download our mobile apps, and learn about your rights under the Fair Debt Collection Practices Act.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0c1f3f;
+            --navy-deep: #081428;
+            --slate: #1e3a5f;
+            --white: #ffffff;
+            --off-white: #fafbfc;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-900: #0f172a;
+            --green: #10b981;
+            --green-dark: #059669;
+            --green-glow: rgba(16, 185, 129, 0.15);
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-serif: 'Playfair Display', Georgia, serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ========================================
+           PASSWORD PROTECTION
+        ======================================== */
+        .password-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .password-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .password-box {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 3rem;
+            max-width: 420px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+
+        .password-logo {
+            width: 60px;
+            height: 60px;
+            color: var(--green);
+            margin: 0 auto 1.5rem;
+        }
+
+        .password-title {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .password-subtitle {
+            font-size: 0.9375rem;
+            color: var(--gray-500);
+            margin-bottom: 2rem;
+        }
+
+        .password-input-group {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .password-input {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            font-size: 1rem;
+            font-family: var(--font-sans);
+            border: 2px solid var(--gray-200);
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .password-input:focus {
+            border-color: var(--green);
+        }
+
+        .password-input.error {
+            border-color: #ef4444;
+            animation: shake 0.4s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-8px); }
+            40%, 80% { transform: translateX(8px); }
+        }
+
+        .password-error {
+            color: #ef4444;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .password-error.visible {
+            display: block;
+        }
+
+        .password-submit {
+            width: 100%;
+            padding: 1rem;
+            background: var(--green);
+            color: var(--white);
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: var(--font-sans);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .password-submit:hover {
+            background: var(--green-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+        }
+
+        .password-hint {
+            margin-top: 1.5rem;
+            font-size: 0.8125rem;
+            color: var(--gray-400);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--white);
+            color: var(--gray-900);
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           NAVIGATION
+        ======================================== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            height: 72px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-mark {
+            width: 36px;
+            height: 36px;
+            color: var(--green);
+        }
+
+        .logo-mark svg {
+            width: 36px;
+            height: 36px;
+        }
+
+        .logo-text {
+            font-family: var(--font-serif);
+            font-size: 1.375rem;
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+            padding: 0.625rem 1rem;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--gray-600);
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--navy);
+            background: var(--gray-50);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-phone {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .nav-phone-label {
+            font-size: 0.6875rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+        }
+
+        .nav-phone-number {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--navy);
+            text-decoration: none;
+        }
+
+        .nav-cta {
+            padding: 0.75rem 1.5rem;
+            background: var(--green);
+            color: var(--white);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--green-dark);
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        /* ========================================
+           HERO SECTION
+        ======================================== */
+        .hero {
+            padding: 10rem 2rem 5rem;
+            background: linear-gradient(to bottom, var(--navy-deep), var(--navy));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80') center/cover no-repeat;
+            opacity: 0.1;
+        }
+
+        .hero-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge svg {
+            width: 16px;
+            height: 16px;
+            color: var(--green);
+        }
+
+        .hero-badge span {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--green);
+        }
+
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.475rem, 4.4vw, 3.3rem);
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--green);
+        }
+
+        .hero-desc {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ========================================
+           PORTAL SECTION
+        ======================================== */
+        .portal {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .portal-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            font-weight: 400;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .section-intro {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: var(--gray-600);
+            max-width: 680px;
+            margin-bottom: 3rem;
+        }
+
+        .portal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .portal-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .portal-feature {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--gray-50);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .portal-feature:hover {
+            background: var(--white);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .portal-feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--navy);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .portal-feature-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--green);
+        }
+
+        .portal-feature h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.375rem;
+        }
+
+        .portal-feature p {
+            font-size: 0.9375rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* Portal Mockup */
+        .portal-mockup {
+            position: relative;
+        }
+
+        .mockup-container {
+            background: var(--navy-deep);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .mockup-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--slate);
+        }
+
+        .mockup-user {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .mockup-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--white);
+            font-size: 0.875rem;
+        }
+
+        .mockup-user-info span {
+            display: block;
+            font-size: 0.8125rem;
+            color: var(--gray-400);
+        }
+
+        .mockup-user-info strong {
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .mockup-date {
+            font-size: 0.75rem;
+            color: var(--gray-400);
+        }
+
+        /* Credit Score Card */
+        .mockup-score-card {
+            background: linear-gradient(135deg, var(--slate) 0%, var(--navy) 100%);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .score-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            margin-bottom: 0.5rem;
+        }
+
+        .score-value {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            font-weight: 500;
+            color: var(--green);
+            line-height: 1;
+        }
+
+        .score-change {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--green);
+        }
+
+        .score-change svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .score-bar {
+            margin-top: 1rem;
+            height: 8px;
+            background: var(--navy-deep);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .score-bar-fill {
+            height: 100%;
+            width: 72%;
+            background: linear-gradient(90deg, #ef4444 0%, #f59e0b 30%, #10b981 70%, #10b981 100%);
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .score-bar-fill::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -4px;
+            width: 4px;
+            height: 16px;
+            background: var(--white);
+            border-radius: 2px;
+        }
+
+        .score-range {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.6875rem;
+            color: var(--gray-500);
+        }
+
+        /* Debt Summary */
+        .mockup-debt-summary {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .debt-card {
+            background: var(--slate);
+            border-radius: 12px;
+            padding: 1.25rem;
+        }
+
+        .debt-card-label {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            margin-bottom: 0.375rem;
+        }
+
+        .debt-card-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .debt-card-value.eliminated {
+            color: var(--green);
+        }
+
+        .debt-card-change {
+            font-size: 0.75rem;
+            color: var(--green);
+            margin-top: 0.25rem;
+        }
+
+        /* Account List */
+        .mockup-accounts {
+            background: var(--slate);
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        .accounts-header {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            margin-bottom: 0.75rem;
+        }
+
+        .account-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--navy);
+        }
+
+        .account-item:last-child {
+            border-bottom: none;
+        }
+
+        .account-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .account-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--navy);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .account-icon svg {
+            width: 16px;
+            height: 16px;
+            color: var(--gray-400);
+        }
+
+        .account-name {
+            font-size: 0.875rem;
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        .account-status {
+            font-size: 0.6875rem;
+            color: var(--gray-400);
+        }
+
+        .account-amount {
+            text-align: right;
+        }
+
+        .account-amount-value {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .account-amount-value.resolved {
+            color: var(--green);
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+
+        .account-badge {
+            font-size: 0.625rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: 0.25rem;
+            display: inline-block;
+        }
+
+        .account-badge.resolved {
+            background: var(--green-glow);
+            color: var(--green);
+        }
+
+        .account-badge.pending {
+            background: rgba(251, 191, 36, 0.15);
+            color: #fbbf24;
+        }
+
+        /* ========================================
+           APP DOWNLOAD SECTION
+        ======================================== */
+        .app-section {
+            padding: 6rem 2rem;
+            background: var(--gray-50);
+        }
+
+        .app-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .app-content {
+            order: 2;
+        }
+
+        .app-phones {
+            order: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            gap: -2rem;
+        }
+
+        .phone-mockup {
+            width: 220px;
+            background: var(--navy-deep);
+            border-radius: 32px;
+            padding: 0.5rem;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .phone-mockup:first-child {
+            transform: rotate(-5deg) translateX(20px);
+            z-index: 1;
+        }
+
+        .phone-mockup:last-child {
+            transform: rotate(5deg) translateX(-20px);
+        }
+
+        .phone-screen {
+            background: var(--navy);
+            border-radius: 28px;
+            padding: 1.5rem 1rem;
+            min-height: 400px;
+        }
+
+        .phone-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .phone-logo {
+            width: 40px;
+            height: 40px;
+            color: var(--green);
+            margin: 0 auto 0.5rem;
+        }
+
+        .phone-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .phone-score {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .phone-score-value {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            color: var(--green);
+            font-weight: 500;
+        }
+
+        .phone-score-label {
+            font-size: 0.6875rem;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .phone-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .phone-stat {
+            background: var(--slate);
+            border-radius: 10px;
+            padding: 0.875rem;
+            text-align: center;
+        }
+
+        .phone-stat-value {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .phone-stat-value.green {
+            color: var(--green);
+        }
+
+        .phone-stat-label {
+            font-size: 0.625rem;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            margin-top: 0.25rem;
+        }
+
+        .app-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .app-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .app-feature svg {
+            width: 20px;
+            height: 20px;
+            color: var(--green);
+            flex-shrink: 0;
+        }
+
+        .app-feature span {
+            font-size: 0.9375rem;
+            color: var(--gray-600);
+        }
+
+        .app-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .app-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.875rem 1.5rem;
+            background: var(--navy);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .app-btn:hover {
+            background: var(--navy-deep);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .app-btn svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .app-btn-text {
+            text-align: left;
+        }
+
+        .app-btn-text span {
+            display: block;
+            font-size: 0.6875rem;
+            opacity: 0.7;
+        }
+
+        .app-btn-text strong {
+            font-size: 1rem;
+        }
+
+        /* ========================================
+           FDCPA RIGHTS SECTION
+        ======================================== */
+        .rights {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .rights-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .rights-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .rights-header .section-title {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .rights-intro {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .right-card {
+            background: var(--gray-50);
+            border-radius: 12px;
+            padding: 1.75rem;
+            border-left: 4px solid var(--green);
+        }
+
+        .right-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .right-card h3 svg {
+            width: 20px;
+            height: 20px;
+            color: var(--green);
+        }
+
+        .right-card p {
+            font-size: 0.9375rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        .rights-disclaimer {
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: var(--gray-50);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .rights-disclaimer p {
+            font-size: 0.8125rem;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        .rights-disclaimer a {
+            color: var(--green);
+            text-decoration: none;
+        }
+
+        .rights-disclaimer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ========================================
+           CONSUMER TIPS SECTION
+        ======================================== */
+        .tips {
+            padding: 6rem 2rem;
+            background: var(--gray-50);
+        }
+
+        .tips-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .tips-column h3 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .tips-column h3 svg {
+            width: 28px;
+            height: 28px;
+            color: var(--green);
+        }
+
+        .tip-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .tip-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .tip-number {
+            width: 28px;
+            height: 28px;
+            background: var(--navy);
+            color: var(--green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .tip-content h4 {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.375rem;
+        }
+
+        .tip-content p {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        .agencies-list {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .agencies-list h4 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .agency-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .agency-item:last-child {
+            border-bottom: none;
+        }
+
+        .agency-name {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+
+        .agency-link {
+            font-size: 0.875rem;
+            color: var(--green);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .agency-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Other Laws Section */
+        .other-laws {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .other-laws h3 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .laws-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .law-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--gray-200);
+        }
+
+        .law-card h4 {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .law-card .law-abbrev {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+
+        .law-card p {
+            font-size: 0.8125rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1024px) {
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .laws-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========================================
+           HELP SECTION
+        ======================================== */
+        .help {
+            padding: 6rem 2rem;
+            background: var(--navy-deep);
+        }
+
+        .help-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .help-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .help-header .section-label {
+            color: var(--green);
+        }
+
+        .help-header .section-title {
+            color: var(--white);
+        }
+
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .help-card {
+            background: var(--slate);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .help-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+        }
+
+        .help-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--navy);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+        }
+
+        .help-icon svg {
+            width: 28px;
+            height: 28px;
+            color: var(--green);
+        }
+
+        .help-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .help-card p {
+            font-size: 0.9375rem;
+            color: var(--gray-400);
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+        }
+
+        .help-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--green);
+            text-decoration: none;
+        }
+
+        .help-link svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .help-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+        .footer {
+            background: var(--navy);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.9375rem;
+            color: var(--gray-400);
+            line-height: 1.7;
+            margin-top: 1rem;
+        }
+
+        .footer h4 {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer a {
+            font-size: 0.9375rem;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer a:hover {
+            color: var(--green);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid var(--slate);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-legal {
+            font-size: 0.8125rem;
+            color: var(--gray-500);
+        }
+
+        .footer-badges {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-badges span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8125rem;
+            color: var(--gray-400);
+        }
+
+        .footer-badges svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* ========================================
+           RESPONSIVE
+        ======================================== */
+        @media (max-width: 1024px) {
+            .portal-grid,
+            .app-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .app-content {
+                order: 1;
+            }
+
+            .app-phones {
+                order: 2;
+            }
+
+            .rights-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .help-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu,
+            .nav-phone {
+                display: none;
+            }
+
+            .nav-toggle {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                padding: 8px;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+
+            .nav-toggle span {
+                width: 24px;
+                height: 2px;
+                background: var(--navy);
+            }
+
+            .hero {
+                padding: 8rem 1.5rem 4rem;
+            }
+
+            .app-buttons {
+                flex-direction: column;
+            }
+
+            .phone-mockup {
+                width: 180px;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Password Protection Overlay -->
+    <div class="password-overlay" id="passwordOverlay">
+        <div class="password-box">
+            <div class="password-logo">
+                <svg viewBox="0 0 40 40" fill="none">
+                    <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.3"/>
+                    <path d="M8 22 C8 22 14 12 20 12 C26 12 32 22 32 22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    <circle cx="20" cy="16" r="4" fill="currentColor"/>
+                </svg>
+            </div>
+            <h2 class="password-title">Protected Area</h2>
+            <p class="password-subtitle">Enter the password to access this site</p>
+            <form id="passwordForm">
+                <div class="password-input-group">
+                    <input type="password" class="password-input" id="passwordInput" placeholder="Enter password" autocomplete="off">
+                </div>
+                <p class="password-error" id="passwordError">Incorrect password. Please try again.</p>
+                <button type="submit" class="password-submit">Access Site</button>
+            </form>
+            <p class="password-hint">Contact your advisor if you need access</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-mark">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.3"/>
+                        <path d="M8 22 C8 22 14 12 20 12 C26 12 32 22 32 22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        <circle cx="20" cy="16" r="4" fill="currentColor"/>
+                    </svg>
+                </div>
+                <span class="logo-text">Horizon</span>
+            </a>
+
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="financial-restoration.html" class="nav-link">Financial Restoration</a>
+                <a href="support.html" class="nav-link active">Support</a>
+                <a href="#" class="nav-link">Contact</a>
+            </div>
+
+            <div class="nav-right">
+                <div class="nav-phone">
+                    <span class="nav-phone-label">Call Us</span>
+                    <a href="tel:8005550199" class="nav-phone-number">(800) 555-0199</a>
+                </div>
+                <a href="#" class="nav-cta">Client Login</a>
+            </div>
+
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+                <span>Support Center</span>
+            </div>
+            <h1 class="hero-title">Your <em>Debt Portal</em> & Resources</h1>
+            <p class="hero-desc">
+                Track your progress, monitor your credit score, and stay informed about your rights. Everything you need to take control of your financial journey.
+            </p>
+        </div>
+    </section>
+
+    <!-- Portal Overview Section -->
+    <section class="portal">
+        <div class="portal-inner">
+            <span class="section-label">Your Client Portal</span>
+            <h2 class="section-title">Everything in one place</h2>
+            <p class="section-intro">
+                Your personalized Horizon portal gives you 24/7 access to your case status, credit score tracking, and all communication with our team.
+            </p>
+
+            <div class="portal-grid">
+                <div class="portal-features">
+                    <div class="portal-feature">
+                        <div class="portal-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v4"/>
+                                <path d="M12 18v4"/>
+                                <path d="M4.93 4.93l2.83 2.83"/>
+                                <path d="M16.24 16.24l2.83 2.83"/>
+                                <path d="M2 12h4"/>
+                                <path d="M18 12h4"/>
+                                <path d="M4.93 19.07l2.83-2.83"/>
+                                <path d="M16.24 7.76l2.83-2.83"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Real-Time Credit Score</h3>
+                            <p>Monitor your credit score as it improves throughout your program. See changes as they happen.</p>
+                        </div>
+                    </div>
+
+                    <div class="portal-feature">
+                        <div class="portal-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"/>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Debt Tracking Dashboard</h3>
+                            <p>See every account, its current status, and watch as debts get resolved one by one.</p>
+                        </div>
+                    </div>
+
+                    <div class="portal-feature">
+                        <div class="portal-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <polyline points="10 9 9 9 8 9"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Document Center</h3>
+                            <p>Access all your documents, letters, and case files securely anytime you need them.</p>
+                        </div>
+                    </div>
+
+                    <div class="portal-feature">
+                        <div class="portal-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Secure Messaging</h3>
+                            <p>Communicate directly with your case manager through encrypted messaging.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portal-mockup">
+                    <div class="mockup-container">
+                        <div class="mockup-header">
+                            <div class="mockup-user">
+                                <div class="mockup-avatar">JD</div>
+                                <div class="mockup-user-info">
+                                    <span>Welcome back,</span>
+                                    <strong>John D.</strong>
+                                </div>
+                            </div>
+                            <div class="mockup-date">Feb 1, 2026</div>
+                        </div>
+
+                        <div class="mockup-score-card">
+                            <div class="score-label">Your Credit Score</div>
+                            <div class="score-value">712</div>
+                            <div class="score-change">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                                    <polyline points="17 6 23 6 23 12"/>
+                                </svg>
+                                +127 points since enrollment
+                            </div>
+                            <div class="score-bar">
+                                <div class="score-bar-fill"></div>
+                            </div>
+                            <div class="score-range">
+                                <span>300</span>
+                                <span>850</span>
+                            </div>
+                        </div>
+
+                        <div class="mockup-debt-summary">
+                            <div class="debt-card">
+                                <div class="debt-card-label">Original Debt</div>
+                                <div class="debt-card-value">$67,420</div>
+                            </div>
+                            <div class="debt-card">
+                                <div class="debt-card-label">Eliminated</div>
+                                <div class="debt-card-value eliminated">$52,180</div>
+                                <div class="debt-card-change">77% resolved</div>
+                            </div>
+                        </div>
+
+                        <div class="mockup-accounts">
+                            <div class="accounts-header">Account Status</div>
+                            <div class="account-item">
+                                <div class="account-info">
+                                    <div class="account-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                                            <line x1="1" y1="10" x2="23" y2="10"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="account-name">Capital One</div>
+                                        <div class="account-status">Collection Account</div>
+                                    </div>
+                                </div>
+                                <div class="account-amount">
+                                    <div class="account-amount-value resolved">$12,450</div>
+                                    <div class="account-badge resolved">Resolved</div>
+                                </div>
+                            </div>
+                            <div class="account-item">
+                                <div class="account-info">
+                                    <div class="account-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="account-name">Medical Center</div>
+                                        <div class="account-status">Medical Debt</div>
+                                    </div>
+                                </div>
+                                <div class="account-amount">
+                                    <div class="account-amount-value resolved">$8,920</div>
+                                    <div class="account-badge resolved">Resolved</div>
+                                </div>
+                            </div>
+                            <div class="account-item">
+                                <div class="account-info">
+                                    <div class="account-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <line x1="12" y1="1" x2="12" y2="23"/>
+                                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="account-name">Midland Credit</div>
+                                        <div class="account-status">In Dispute</div>
+                                    </div>
+                                </div>
+                                <div class="account-amount">
+                                    <div class="account-amount-value">$15,240</div>
+                                    <div class="account-badge pending">Pending</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Download Section -->
+    <section class="app-section">
+        <div class="app-inner">
+            <div class="app-grid">
+                <div class="app-phones">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="phone-header">
+                                <div class="phone-logo">
+                                    <svg viewBox="0 0 40 40" fill="none">
+                                        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.3"/>
+                                        <path d="M8 22 C8 22 14 12 20 12 C26 12 32 22 32 22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                        <circle cx="20" cy="16" r="4" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <div class="phone-title">Horizon</div>
+                            </div>
+                            <div class="phone-score">
+                                <div class="phone-score-value">712</div>
+                                <div class="phone-score-label">Credit Score</div>
+                            </div>
+                            <div class="phone-stats">
+                                <div class="phone-stat">
+                                    <div class="phone-stat-value green">$52K</div>
+                                    <div class="phone-stat-label">Eliminated</div>
+                                </div>
+                                <div class="phone-stat">
+                                    <div class="phone-stat-value">77%</div>
+                                    <div class="phone-stat-label">Complete</div>
+                                </div>
+                                <div class="phone-stat">
+                                    <div class="phone-stat-value">4</div>
+                                    <div class="phone-stat-label">Resolved</div>
+                                </div>
+                                <div class="phone-stat">
+                                    <div class="phone-stat-value">1</div>
+                                    <div class="phone-stat-label">Pending</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="phone-header">
+                                <div class="phone-logo">
+                                    <svg viewBox="0 0 40 40" fill="none">
+                                        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.3"/>
+                                        <path d="M8 22 C8 22 14 12 20 12 C26 12 32 22 32 22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                        <circle cx="20" cy="16" r="4" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <div class="phone-title">Messages</div>
+                            </div>
+                            <div style="background: var(--slate); border-radius: 10px; padding: 0.875rem; margin-bottom: 0.75rem;">
+                                <div style="font-size: 0.6875rem; color: var(--gray-400); margin-bottom: 0.25rem;">Case Manager</div>
+                                <div style="font-size: 0.8125rem; color: var(--white);">Great news! Capital One account has been resolved.</div>
+                            </div>
+                            <div style="background: var(--slate); border-radius: 10px; padding: 0.875rem; margin-bottom: 0.75rem;">
+                                <div style="font-size: 0.6875rem; color: var(--gray-400); margin-bottom: 0.25rem;">System Alert</div>
+                                <div style="font-size: 0.8125rem; color: var(--white);">Your credit score increased by 18 points!</div>
+                            </div>
+                            <div style="background: var(--slate); border-radius: 10px; padding: 0.875rem;">
+                                <div style="font-size: 0.6875rem; color: var(--gray-400); margin-bottom: 0.25rem;">Document</div>
+                                <div style="font-size: 0.8125rem; color: var(--white);">New letter uploaded to your portal.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-content">
+                    <span class="section-label">Mobile App</span>
+                    <h2 class="section-title">Track your progress anywhere</h2>
+                    <p class="section-intro">
+                        Download the Horizon app to monitor your debt resolution progress, receive real-time notifications, and communicate with your case manager — all from your phone.
+                    </p>
+
+                    <div class="app-features">
+                        <div class="app-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Real-time credit score updates</span>
+                        </div>
+                        <div class="app-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Push notifications for account changes</span>
+                        </div>
+                        <div class="app-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Secure messaging with your case manager</span>
+                        </div>
+                        <div class="app-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Document upload and viewing</span>
+                        </div>
+                        <div class="app-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Biometric login for security</span>
+                        </div>
+                    </div>
+
+                    <div class="app-buttons">
+                        <a href="#" class="app-btn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                            </svg>
+                            <div class="app-btn-text">
+                                <span>Download on the</span>
+                                <strong>App Store</strong>
+                            </div>
+                        </a>
+                        <a href="#" class="app-btn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 010 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z"/>
+                            </svg>
+                            <div class="app-btn-text">
+                                <span>Get it on</span>
+                                <strong>Google Play</strong>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FDCPA Rights Section -->
+    <section class="rights">
+        <div class="rights-inner">
+            <div class="rights-header">
+                <span class="section-label">Know Your Rights</span>
+                <h2 class="section-title">Your Rights Under the FDCPA</h2>
+                <p class="rights-intro">
+                    The Fair Debt Collection Practices Act (FDCPA) is a federal law that protects you from abusive, unfair, and deceptive debt collection practices. Here's what you need to know.
+                </p>
+            </div>
+
+            <div class="rights-grid">
+                <div class="right-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        Limited Contact Hours
+                    </h3>
+                    <p>Collectors cannot contact you before 8 a.m. or after 9 p.m. in your local time zone. They also cannot contact you at work if you tell them your employer disapproves.</p>
+                </div>
+
+                <div class="right-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                            <line x1="12" y1="2" x2="12" y2="4"/>
+                        </svg>
+                        Right to Stop Contact
+                    </h3>
+                    <p>You can send a written request to stop all communication. After receiving it, the collector can only contact you to confirm they'll stop or to notify you of specific actions.</p>
+                </div>
+
+                <div class="right-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                        </svg>
+                        Debt Validation
+                    </h3>
+                    <p>Within 5 days of first contact, collectors must send you a written notice with the amount owed, creditor name, and your right to dispute. You have 30 days to request validation.</p>
+                </div>
+
+                <div class="right-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/>
+                        </svg>
+                        No Harassment or Abuse
+                    </h3>
+                    <p>Collectors cannot use threats of violence, obscene language, repeatedly call to annoy you, or publish your name as someone who doesn't pay debts.</p>
+                </div>
+
+                <div class="right-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                        No False Statements
+                    </h3>
+                    <p>Collectors cannot lie about the amount you owe, falsely claim to be attorneys or government representatives, or threaten actions they cannot legally take.</p>
+                </div>
+
+                <div class="right-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <line x1="23" y1="11" x2="17" y2="11"/>
+                        </svg>
+                        Third-Party Privacy
+                    </h3>
+                    <p>Collectors generally cannot discuss your debt with anyone other than you, your spouse, your attorney, or a co-signer. They can only contact others to find your location.</p>
+                </div>
+
+                <div class="right-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                        No Unfair Practices
+                    </h3>
+                    <p>Collectors cannot collect more than what you owe, deposit post-dated checks early, take your property without legal authority, or contact you by postcard.</p>
+                </div>
+
+                <div class="right-card">
+                    <h3>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        Right to Sue
+                    </h3>
+                    <p>If a collector violates the FDCPA, you can sue them within one year. You may recover actual damages, statutory damages up to $1,000, and attorney's fees.</p>
+                </div>
+            </div>
+
+            <div class="rights-disclaimer">
+                <p>
+                    This is a summary of your rights under the FDCPA and is not legal advice. For the complete text of the law, visit the
+                    <a href="https://www.ftc.gov/enforcement/rules/rulemaking-regulatory-reform-proceedings/fair-debt-collection-practices-act-text" target="_blank">FTC website</a>
+                    or consult with a qualified attorney. If you believe your rights have been violated, contact our team for a free case evaluation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consumer Tips Section -->
+    <section class="tips">
+        <div class="tips-inner">
+            <span class="section-label">Protecting Yourself</span>
+            <h2 class="section-title">How to Deal With Debt Collectors</h2>
+            <p class="section-intro">
+                Knowledge is power. Understanding how to communicate with debt collectors and document interactions can protect your rights and strengthen your position.
+            </p>
+
+            <div class="tips-grid">
+                <div class="tips-column">
+                    <h3>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                        </svg>
+                        Document Everything
+                    </h3>
+
+                    <div class="tip-item">
+                        <div class="tip-number">1</div>
+                        <div class="tip-content">
+                            <h4>Keep a Call Log</h4>
+                            <p>Record the date, time, collector's name, company, phone number, and what was discussed for every call you receive.</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-item">
+                        <div class="tip-number">2</div>
+                        <div class="tip-content">
+                            <h4>Save All Written Communication</h4>
+                            <p>Keep every letter, email, and text message. Store originals in a safe place and make copies for your records.</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-item">
+                        <div class="tip-number">3</div>
+                        <div class="tip-content">
+                            <h4>Send Letters via Certified Mail</h4>
+                            <p>When sending dispute letters or cease communication requests, use certified mail with return receipt to prove delivery.</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-item">
+                        <div class="tip-number">4</div>
+                        <div class="tip-content">
+                            <h4>Request Debt Validation</h4>
+                            <p>Within 30 days of first contact, send a written request asking the collector to verify the debt amount and prove you owe it.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tips-column">
+                    <h3>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        Protect Your Rights
+                    </h3>
+
+                    <div class="tip-item">
+                        <div class="tip-number">1</div>
+                        <div class="tip-content">
+                            <h4>Never Admit the Debt is Yours</h4>
+                            <p>Don't confirm personal information or acknowledge the debt until you've received written validation proving it's legitimate.</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-item">
+                        <div class="tip-number">2</div>
+                        <div class="tip-content">
+                            <h4>Know Your State's Statute of Limitations</h4>
+                            <p>Debt has an expiration date for legal collection. Making a payment can restart the clock, so know your state's limits before paying.</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-item">
+                        <div class="tip-number">3</div>
+                        <div class="tip-content">
+                            <h4>Don't Make Promises You Can't Keep</h4>
+                            <p>Never agree to a payment plan you can't afford. Verbal agreements may be binding, and missed payments can make things worse.</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-item">
+                        <div class="tip-number">4</div>
+                        <div class="tip-content">
+                            <h4>Get Everything in Writing</h4>
+                            <p>If you negotiate a settlement, get the terms in writing before making any payment. Include that the debt will be marked "paid in full."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="agencies-list">
+                <h4>Where to File Complaints</h4>
+                <div class="agency-item">
+                    <span class="agency-name">Consumer Financial Protection Bureau (CFPB)</span>
+                    <a href="https://www.consumerfinance.gov/complaint/" target="_blank" class="agency-link">File a Complaint →</a>
+                </div>
+                <div class="agency-item">
+                    <span class="agency-name">Federal Trade Commission (FTC)</span>
+                    <a href="https://reportfraud.ftc.gov/" target="_blank" class="agency-link">Report Fraud →</a>
+                </div>
+                <div class="agency-item">
+                    <span class="agency-name">Your State Attorney General</span>
+                    <a href="https://www.naag.org/find-my-ag/" target="_blank" class="agency-link">Find Your AG →</a>
+                </div>
+            </div>
+
+            <div class="other-laws">
+                <h3>Other Laws That Protect You</h3>
+                <div class="laws-grid">
+                    <div class="law-card">
+                        <div class="law-abbrev">FCRA</div>
+                        <h4>Fair Credit Reporting Act</h4>
+                        <p>Governs how credit bureaus collect and report your information. You can dispute inaccurate items and must be notified when negative information is reported.</p>
+                    </div>
+                    <div class="law-card">
+                        <div class="law-abbrev">TCPA</div>
+                        <h4>Telephone Consumer Protection Act</h4>
+                        <p>Restricts automated calls and texts. Collectors need your consent to use autodialers or prerecorded messages to your cell phone.</p>
+                    </div>
+                    <div class="law-card">
+                        <div class="law-abbrev">State Laws</div>
+                        <h4>Your State's Consumer Protection Laws</h4>
+                        <p>Many states have additional protections beyond federal law, including stricter rules on collection practices and longer statutes of limitations for violations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Help Section -->
+    <section class="help">
+        <div class="help-inner">
+            <div class="help-header">
+                <span class="section-label">Need Assistance?</span>
+                <h2 class="section-title">We're here to help</h2>
+            </div>
+
+            <div class="help-grid">
+                <div class="help-card">
+                    <div class="help-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>Speak directly with a case manager about your situation.</p>
+                    <a href="tel:8005550199" class="help-link">
+                        (800) 555-0199
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="help-card">
+                    <div class="help-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <h3>Email Support</h3>
+                    <p>Send us a message and we'll respond within 24 hours.</p>
+                    <a href="mailto:support@horizonfs.com" class="help-link">
+                        support@horizonfs.com
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="help-card">
+                    <div class="help-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Live Chat</h3>
+                    <p>Chat with our support team in real-time through your portal.</p>
+                    <a href="#" class="help-link">
+                        Open Portal Chat
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <div class="logo-mark" style="color: var(--green);">
+                        <svg viewBox="0 0 40 40" fill="none">
+                            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.3"/>
+                            <path d="M8 22 C8 22 14 12 20 12 C26 12 32 22 32 22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <circle cx="20" cy="16" r="4" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text" style="color: var(--white);">Horizon</span>
+                </a>
+                <p>Helping people find their path forward since 2012.</p>
+            </div>
+            <div>
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="financial-restoration.html">Financial Restoration</a></li>
+                    <li><a href="debt-consolidation.html">Debt Consolidation</a></li>
+                    <li><a href="credit-counseling.html">Credit Counseling</a></li>
+                    <li><a href="personal-loans.html">Personal Loans</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">In The News</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Disclosures</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-legal">© 2026 Horizon Financial Services. All rights reserved.</p>
+            <div class="footer-badges">
+                <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    A+ BBB
+                </span>
+                <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                    IAPDA Certified
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Password Protection
+        const SITE_PASSWORD = 'horizon2024';
+        const overlay = document.getElementById('passwordOverlay');
+        const form = document.getElementById('passwordForm');
+        const input = document.getElementById('passwordInput');
+        const error = document.getElementById('passwordError');
+
+        // Check if already authenticated
+        if (sessionStorage.getItem('horizon_authenticated') === 'true') {
+            overlay.classList.add('hidden');
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (input.value === SITE_PASSWORD) {
+                sessionStorage.setItem('horizon_authenticated', 'true');
+                overlay.classList.add('hidden');
+            } else {
+                input.classList.add('error');
+                error.classList.add('visible');
+                setTimeout(() => {
+                    input.classList.remove('error');
+                }, 400);
+            }
+        });
+
+        input.addEventListener('input', () => {
+            error.classList.remove('visible');
+        });
+    </script>
+</body>
+</html>
