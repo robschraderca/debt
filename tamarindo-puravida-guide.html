@@ -1,0 +1,2271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tamarindo, Costa Rica — Complete City Guide | PuraVida</title>
+  <meta name="description" content="Your insider guide to Costa Rica's premier surf and beach destination. Beyond the brochure, into the real Tamarindo. Discover beaches, neighborhoods, dining, and real estate.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    ::selection {
+      background: #c4a35a;
+      color: white;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Source Serif 4', Georgia, serif;
+      background: #faf8f5;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    /* Typography */
+    .font-sans {
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .section-title {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 300;
+      line-height: 1.2;
+      color: #1a1a1a;
+      letter-spacing: -0.5px;
+    }
+
+    .section-subtitle {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #c4a35a;
+    }
+
+    .body-text {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: #c4a35a;
+      margin: 24px 0;
+    }
+
+    /* Header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 20px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.4s ease;
+    }
+
+    .header.scrolled {
+      padding: 16px 48px;
+      background: rgba(250, 248, 245, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid #e8e4dc;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: #c4a35a;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .logo-text {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    .logo-tagline {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #888;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-link {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: #1a1a1a;
+      text-decoration: none;
+      position: relative;
+      padding: 8px 0;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #c4a35a;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #c4a35a;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background: #1a1a1a;
+      border: none;
+      padding: 14px 32px;
+      color: white;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: #c4a35a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(196, 163, 90, 0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid #1a1a1a;
+      padding: 12px 28px;
+      color: #1a1a1a;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: #1a1a1a;
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      min-height: 700px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 70%;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(26, 26, 26, 0.2) 0%,
+        rgba(26, 26, 26, 0.4) 50%,
+        rgba(26, 26, 26, 0.7) 100%
+      );
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+      padding: 0 24px;
+      max-width: 900px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 8px 20px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: clamp(48px, 10vw, 100px);
+      font-weight: 300;
+      line-height: 1;
+      margin-bottom: 16px;
+      letter-spacing: -2px;
+    }
+
+    .hero-subtitle {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: clamp(18px, 3vw, 24px);
+      font-weight: 300;
+      opacity: 0.9;
+      margin-bottom: 48px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      text-align: center;
+      padding: 0 24px;
+      border-left: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .hero-stat:first-child {
+      border-left: none;
+    }
+
+    .hero-stat-value {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: #c4a35a;
+    }
+
+    .hero-stat-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-top: 4px;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: white;
+      opacity: 0.7;
+      animation: bounce 2s infinite;
+    }
+
+    .scroll-indicator span {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+      40% { transform: translateX(-50%) translateY(-10px); }
+      60% { transform: translateX(-50%) translateY(-5px); }
+    }
+
+    /* Main Content Layout */
+    .main-content {
+      display: flex;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 80px 48px;
+      gap: 64px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 120px;
+      height: fit-content;
+    }
+
+    .sidebar-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 16px;
+    }
+
+    .section-nav {
+      display: block;
+      padding: 16px 20px;
+      border-left: 3px solid transparent;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+    }
+
+    .section-nav:hover {
+      background: rgba(196, 163, 90, 0.08);
+      border-left-color: #c4a35a;
+    }
+
+    .section-nav.active {
+      background: rgba(196, 163, 90, 0.12);
+      border-left-color: #c4a35a;
+    }
+
+    .section-nav-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a1a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-nav-subtitle {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      color: #888;
+      margin-top: 2px;
+    }
+
+    .affiliate-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 8px;
+      background: linear-gradient(135deg, #c4a35a, #a88c3d);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: white;
+      border-radius: 2px;
+    }
+
+    .sidebar-cta {
+      margin-top: 32px;
+      padding: 28px;
+      background: white;
+      border: 1px solid #e8e4dc;
+    }
+
+    .sidebar-cta h4 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .sidebar-cta p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .sidebar-cta .btn-primary {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Content Area */
+    .content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .section {
+      margin-bottom: 80px;
+    }
+
+    .section-header {
+      margin-bottom: 40px;
+    }
+
+    /* Cards */
+    .card {
+      background: white;
+      border: 1px solid #e8e4dc;
+      padding: 32px;
+      transition: all 0.4s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+      transform: translateY(-4px);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .card-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .stat-card {
+      background: white;
+      border: 1px solid #e8e4dc;
+      padding: 32px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      border-color: #c4a35a;
+    }
+
+    .stat-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .stat-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 4px;
+    }
+
+    .stat-value {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    /* Tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 14px;
+      background: #f5f3ef;
+      border: 1px solid #e8e4dc;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #666;
+    }
+
+    /* Pros/Cons */
+    .pros-cons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .pros-cons ul {
+      list-style: none;
+    }
+
+    .pros-cons li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0ede8;
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .pros-cons li:last-child {
+      border-bottom: none;
+    }
+
+    .check {
+      color: #2d7d46;
+      font-weight: bold;
+    }
+
+    .cross {
+      color: #c44;
+      font-weight: bold;
+    }
+
+    /* Neighborhood Cards */
+    .neighborhood-card {
+      background: white;
+      border: 1px solid #e8e4dc;
+      padding: 32px;
+      margin-bottom: 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      transition: all 0.4s ease;
+    }
+
+    .neighborhood-card:hover {
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+
+    .neighborhood-name {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 26px;
+      font-weight: 400;
+      margin-bottom: 4px;
+    }
+
+    .neighborhood-vibe {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #c4a35a;
+      margin-bottom: 16px;
+    }
+
+    .neighborhood-desc {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .ratings {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .rating-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .rating-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #666;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .rating-bar {
+      height: 4px;
+      background: #e8e4dc;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .rating-fill {
+      height: 100%;
+      background: #c4a35a;
+      border-radius: 2px;
+      transition: width 0.5s ease;
+    }
+
+    .rating-fill.blue { background: #3b82f6; }
+    .rating-fill.pink { background: #ec4899; }
+    .rating-fill.cyan { background: #06b6d4; }
+
+    /* Listing Cards */
+    .listing-card {
+      background: white;
+      border: 1px solid #e8e4dc;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .listing-card:hover {
+      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+      transform: translateY(-8px);
+      border-color: #c4a35a;
+    }
+
+    .listing-image {
+      height: 200px;
+      background: linear-gradient(135deg, #f5f3ef 0%, #e8e4dc 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .listing-image-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+    }
+
+    .listing-content {
+      padding: 24px;
+    }
+
+    .listing-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .listing-name {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: #1a1a1a;
+    }
+
+    .listing-location {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      color: #888;
+    }
+
+    .listing-price {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #c4a35a;
+    }
+
+    .listing-specs {
+      display: flex;
+      gap: 16px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 16px;
+    }
+
+    .listing-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .listing-highlight {
+      padding: 4px 10px;
+      background: #f5f3ef;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      color: #666;
+    }
+
+    .listing-actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    .listing-actions .btn-primary {
+      flex: 1;
+      text-align: center;
+      padding: 12px 16px;
+    }
+
+    .listing-actions .btn-secondary {
+      padding: 10px 20px;
+    }
+
+    /* Activity Cards */
+    .activity-card {
+      display: flex;
+      background: white;
+      border: 1px solid #e8e4dc;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .activity-card:hover {
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+      transform: translateY(-4px);
+    }
+
+    .activity-icon {
+      width: 120px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+    }
+
+    .activity-icon.water { background: linear-gradient(135deg, #e0f2fe, #bae6fd); }
+    .activity-icon.wildlife { background: linear-gradient(135deg, #dcfce7, #bbf7d0); }
+    .activity-icon.nature { background: linear-gradient(135deg, #fef3c7, #fde68a); }
+    .activity-icon.adventure { background: linear-gradient(135deg, #fce7f3, #fbcfe8); }
+
+    .activity-content {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .activity-name {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 17px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .activity-meta {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      color: #888;
+    }
+
+    .activity-price {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #c4a35a;
+    }
+
+    /* Restaurant Cards */
+    .restaurant-card {
+      background: white;
+      border: 1px solid #e8e4dc;
+      padding: 24px;
+      transition: all 0.4s ease;
+    }
+
+    .restaurant-card:hover {
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+      transform: translateY(-4px);
+    }
+
+    .restaurant-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .restaurant-name {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .restaurant-price {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #c4a35a;
+    }
+
+    .restaurant-meta {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 12px;
+    }
+
+    .restaurant-desc {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* Tips */
+    .tip-card {
+      background: white;
+      border: 1px solid #e8e4dc;
+      border-left: 4px solid #c4a35a;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+
+    .tip-card p {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    /* Itinerary */
+    .itinerary-card {
+      background: white;
+      border: 1px solid #e8e4dc;
+      padding: 32px;
+      margin-bottom: 24px;
+    }
+
+    .itinerary-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+
+    .itinerary-title {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+
+    .itinerary-days {
+      list-style: none;
+    }
+
+    .itinerary-day {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 12px 0;
+    }
+
+    .itinerary-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #c4a35a;
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    .itinerary-day p {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 15px;
+      color: #444;
+    }
+
+    /* Filters */
+    .filters {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      padding: 24px;
+      background: white;
+      border: 1px solid #e8e4dc;
+      margin-bottom: 32px;
+    }
+
+    .filter-group label {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    select {
+      background: white;
+      border: 2px solid #e8e4dc;
+      padding: 12px 40px 12px 16px;
+      color: #1a1a1a;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231a1a1a' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      transition: border-color 0.3s ease;
+      min-width: 180px;
+    }
+
+    select:hover, select:focus {
+      border-color: #c4a35a;
+      outline: none;
+    }
+
+    /* Market Stats */
+    .market-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      padding: 40px;
+      background: linear-gradient(135deg, #f5f3ef 0%, #faf8f5 100%);
+      border: 1px solid #e8e4dc;
+      margin-top: 48px;
+    }
+
+    .market-stat {
+      text-align: center;
+    }
+
+    .market-stat-value {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: #c4a35a;
+      margin-bottom: 4px;
+    }
+
+    .market-stat-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 2px;
+    }
+
+    .market-stat-sub {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      color: #888;
+    }
+
+    /* Agency Cards */
+    .agency-card {
+      background: white;
+      border: 1px solid #e8e4dc;
+      padding: 28px;
+      position: relative;
+      transition: all 0.4s ease;
+    }
+
+    .agency-card:hover {
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+
+    .agency-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+    }
+
+    .agency-name {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .agency-specialty {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 16px;
+    }
+
+    .agency-contact {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      color: #888;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 80px 48px;
+      background: #1a1a1a;
+      color: white;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 64px;
+    }
+
+    .footer-brand p {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 15px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      margin-top: 16px;
+    }
+
+    .footer h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 20px;
+    }
+
+    .footer ul {
+      list-style: none;
+    }
+
+    .footer li {
+      margin-bottom: 12px;
+    }
+
+    .footer a {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: #c4a35a;
+    }
+
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 48px auto 0;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* Photo Credit */
+    .photo-credit {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      z-index: 2;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .photo-credit a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+      .card-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 992px) {
+      .main-content {
+        flex-direction: column;
+        padding: 60px 24px;
+      }
+
+      .sidebar {
+        width: 100%;
+        position: relative;
+        top: 0;
+      }
+
+      .neighborhood-card {
+        grid-template-columns: 1fr;
+      }
+
+      .pros-cons {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .market-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        padding: 16px 24px;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hero-stats {
+        gap: 24px;
+      }
+
+      .hero-stat {
+        padding: 0 16px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card-grid-3, .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .activity-card {
+        flex-direction: column;
+      }
+
+      .activity-icon {
+        width: 100%;
+        height: 100px;
+      }
+
+      .market-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <a href="/" class="logo">
+      <div class="logo-icon">🌴</div>
+      <div>
+        <div class="logo-text">PuraVida</div>
+        <div class="logo-tagline">Costa Rica Travel</div>
+      </div>
+    </a>
+    <nav class="nav">
+      <a href="#" class="nav-link">Destinations</a>
+      <a href="#" class="nav-link">Plan Your Trip</a>
+      <a href="#" class="nav-link">Real Estate</a>
+      <a href="#" class="btn-primary">Get Started</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section with Picturesque Image -->
+  <section class="hero">
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1500759285222-a95626b934cb?q=80&w=2940&auto=format&fit=crop"
+           alt="Golden sunset over Tamarindo Beach, Costa Rica with surfers and palm trees">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-badge">Complete City Guide</span>
+      <h1 class="hero-title">Tamarindo</h1>
+      <p class="hero-subtitle">Costa Rica's premier surf destination where golden beaches meet vibrant nightlife and eco-adventure.</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-value">1</div>
+          <div class="hero-stat-label">Hour from LIR</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">30+</div>
+          <div class="hero-stat-label">Properties Listed</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">$185K</div>
+          <div class="hero-stat-label">Starting From</div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Explore</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+    </div>
+    <div class="photo-credit">Photo by <a href="https://unsplash.com" target="_blank">Unsplash</a></div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-title">Guide Sections</div>
+      <nav>
+        <a href="#overview" class="section-nav active">
+          <div class="section-nav-title">Overview</div>
+          <div class="section-nav-subtitle">The Essentials</div>
+        </a>
+        <a href="#neighborhoods" class="section-nav">
+          <div class="section-nav-title">Neighborhoods</div>
+          <div class="section-nav-subtitle">Find Your Place</div>
+        </a>
+        <a href="#stay" class="section-nav">
+          <div class="section-nav-title">Where to Stay <span class="affiliate-tag">Partner</span></div>
+          <div class="section-nav-subtitle">Rest & Recharge</div>
+        </a>
+        <a href="#eat" class="section-nav">
+          <div class="section-nav-title">Eat & Drink</div>
+          <div class="section-nav-subtitle">Local Flavors</div>
+        </a>
+        <a href="#do" class="section-nav">
+          <div class="section-nav-title">Things to Do <span class="affiliate-tag">Partner</span></div>
+          <div class="section-nav-subtitle">Adventures Await</div>
+        </a>
+        <a href="#tours" class="section-nav">
+          <div class="section-nav-title">Tours <span class="affiliate-tag">Partner</span></div>
+          <div class="section-nav-subtitle">Guided Experiences</div>
+        </a>
+        <a href="#practical" class="section-nav">
+          <div class="section-nav-title">Practical Info</div>
+          <div class="section-nav-subtitle">Need to Know</div>
+        </a>
+        <a href="#tips" class="section-nav">
+          <div class="section-nav-title">Insider Tips</div>
+          <div class="section-nav-subtitle">Local Secrets</div>
+        </a>
+        <a href="#itineraries" class="section-nav">
+          <div class="section-nav-title">Itineraries</div>
+          <div class="section-nav-subtitle">Plan Your Days</div>
+        </a>
+        <a href="#realestate" class="section-nav">
+          <div class="section-nav-title">Real Estate <span class="affiliate-tag">Partner</span></div>
+          <div class="section-nav-subtitle">Invest in Paradise</div>
+        </a>
+      </nav>
+
+      <div class="sidebar-cta">
+        <h4>Ready to Invest?</h4>
+        <p>Connect with our trusted local agents for personalized property tours in Tamarindo.</p>
+        <a href="#realestate" class="btn-primary">Schedule Consultation</a>
+      </div>
+    </aside>
+
+    <!-- Content -->
+    <main class="content">
+      <!-- Overview Section -->
+      <section id="overview" class="section">
+        <div class="section-header">
+          <span class="section-subtitle">The Essentials</span>
+          <h2 class="section-title">City Overview</h2>
+          <div class="divider"></div>
+          <p class="body-text" style="max-width: 700px;">
+            Tamarindo is the crown jewel of Costa Rica's Gold Coast—a once-sleepy fishing village
+            transformed into a world-class surf and vacation destination. With its perfect waves,
+            stunning sunsets, and sophisticated dining scene, it attracts everyone from backpackers
+            to luxury travelers seeking the authentic pura vida lifestyle.
+          </p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">✈️</div>
+            <div class="stat-label">From LIR Airport</div>
+            <div class="stat-value">1 hour</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🌡️</div>
+            <div class="stat-label">Avg Temperature</div>
+            <div class="stat-value">88°F / 31°C</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🏖️</div>
+            <div class="stat-label">Beach Length</div>
+            <div class="stat-value">3.5 km</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🌊</div>
+            <div class="stat-label">Best Surf</div>
+            <div class="stat-value">Year-round</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">💵</div>
+            <div class="stat-label">Daily Budget</div>
+            <div class="stat-value">$100-250</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🗣️</div>
+            <div class="stat-label">Languages</div>
+            <div class="stat-value">Spanish, English</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom: 32px;">
+          <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-size: 20px; margin-bottom: 20px;">Who Tamarindo Is For</h3>
+          <div class="tags">
+            <span class="tag">Surfers</span>
+            <span class="tag">Digital Nomads</span>
+            <span class="tag">Yoga Enthusiasts</span>
+            <span class="tag">Families</span>
+            <span class="tag">Retirees</span>
+            <span class="tag">Eco-Travelers</span>
+            <span class="tag">Foodies</span>
+            <span class="tag">Beach Lovers</span>
+          </div>
+        </div>
+
+        <div class="pros-cons">
+          <div class="card">
+            <h3 style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #2d7d46; margin-bottom: 20px;">✓ Pros</h3>
+            <ul>
+              <li><span class="check">✓</span> Close to Liberia airport</li>
+              <li><span class="check">✓</span> World-class beginner surf</li>
+              <li><span class="check">✓</span> Incredible sunsets</li>
+              <li><span class="check">✓</span> Thriving expat community</li>
+              <li><span class="check">✓</span> Excellent dining scene</li>
+              <li><span class="check">✓</span> Sea turtle nesting</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3 style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #c44; margin-bottom: 20px;">✗ Cons</h3>
+            <ul>
+              <li><span class="cross">✗</span> Very touristy in high season</li>
+              <li><span class="cross">✗</span> Higher prices than other areas</li>
+              <li><span class="cross">✗</span> Hot and dry climate</li>
+              <li><span class="cross">✗</span> Traffic congestion downtown</li>
+              <li><span class="cross">✗</span> Development sprawl</li>
+              <li><span class="cross">✗</span> Party scene can be loud</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Neighborhoods Section -->
+      <section id="neighborhoods" class="section">
+        <div class="section-header">
+          <span class="section-subtitle">Find Your Place</span>
+          <h2 class="section-title">Neighborhoods</h2>
+          <div class="divider"></div>
+          <p class="body-text" style="max-width: 700px;">
+            Each area has its own personality. Find your perfect fit based on what matters most to you.
+          </p>
+        </div>
+
+        <div class="neighborhood-card">
+          <div>
+            <h3 class="neighborhood-name">Tamarindo Centro</h3>
+            <div class="neighborhood-vibe">Beach Town Hub</div>
+            <p class="neighborhood-desc">
+              The bustling heart of Tamarindo—restaurants, surf shops, nightlife, and the main beach
+              all at your doorstep. Walk everywhere and soak in the vibrant atmosphere.
+            </p>
+          </div>
+          <div class="ratings">
+            <div class="rating-item">
+              <div class="rating-label"><span>Walkability</span><span>10/10</span></div>
+              <div class="rating-bar"><div class="rating-fill" style="width: 100%"></div></div>
+            </div>
+            <div class="rating-item">
+              <div class="rating-label"><span>Nightlife</span><span>9/10</span></div>
+              <div class="rating-bar"><div class="rating-fill pink" style="width: 90%"></div></div>
+            </div>
+            <div class="rating-item">
+              <div class="rating-label"><span>Family-Friendly</span><span>6/10</span></div>
+              <div class="rating-bar"><div class="rating-fill blue" style="width: 60%"></div></div>
+            </div>
+            <div class="rating-item">
+              <div class="rating-label"><span>Surfing</span><span>8/10</span></div>
+              <div class="rating-bar"><div class="rating-fill cyan" style="width: 80%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="neighborhood-card">
+          <div>
+            <h3 class="neighborhood-name">Playa Langosta</h3>
+            <div class="neighborhood-vibe">Upscale & Serene</div>
+            <p class="neighborhood-desc">
+              Just south of Tamarindo, Langosta offers a quieter, more refined beach experience.
+              Protected estuary, luxury homes, and some of the area's best restaurants.
+            </p>
+          </div>
+          <div class="ratings">
+            <div class="rating-item">
+              <div class="rating-label"><span>Walkability</span><span>5/10</span></div>
+              <div class="rating-bar"><div class="rating-fill" style="width: 50%"></div></div>
+            </div>
+            <div class="rating-item">
+              <div class="rating-label"><span>Nightlife</span><span>3/10</span></div>
+              <div class="rating-bar"><div class="rating-fill pink" style="width: 30%"></div></div>
+            </div>
+            <div class="rating-item">
+              <div class="rating-label"><span>Family-Friendly</span><span>9/10</span></div>
+              <div class="rating-bar"><div class="rating-fill blue" style="width: 90%"></div></div>
+            </div>
+            <div class="rating-item">
+              <div class="rating-label"><span>Surfing</span><span>7/10</span></div>
+              <div class="rating-bar"><div class="rating-fill cyan" style="width: 70%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="neighborhood-card">
+          <div>
+            <h3 class="neighborhood-name">Playa Grande</h3>
+            <div class="neighborhood-vibe">Protected Paradise</div>
+            <p class="neighborhood-desc">
+              Across the estuary, Playa Grande is a national park beach famous for leatherback
+              turtle nesting. Pristine, uncrowded, and home to serious surfers seeking powerful waves.
+            </p>
+          </div>
+          <div class="ratings">
+            <div class="rating-item">
+              <div class="rating-label"><span>Walkability</span><span>2/10</span></div>
+              <div class="rating-bar"><div class="rating-fill" style="width: 20%"></div></div>
+            </div>
+            <div class="rating-item">
+              <div class="rating-label"><span>Nightlife</span><span>1/10</span></div>
+              <div class="rating-bar"><div class="rating-fill pink" style="width: 10%"></div></div>
+            </div>
+            <div class="rating-item">
+              <div class="rating-label"><span>Family-Friendly</span><span>7/10</span></div>
+              <div class="rating-bar"><div class="rating-fill blue" style="width: 70%"></div></div>
+            </div>
+            <div class="rating-item">
+              <div class="rating-label"><span>Surfing</span><span>10/10</span></div>
+              <div class="rating-bar"><div class="rating-fill cyan" style="width: 100%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="neighborhood-card">
+          <div>
+            <h3 class="neighborhood-name">Hacienda Pinilla</h3>
+            <div class="neighborhood-vibe">Luxury Resort Community</div>
+            <p class="neighborhood-desc">
+              A 4,500-acre private resort community with championship golf, beach club,
+              equestrian center, and exclusive amenities. The premium Guanacaste lifestyle.
+            </p>
+          </div>
+          <div class="ratings">
+            <div class="rating-item">
+              <div class="rating-label"><span>Walkability</span><span>3/10</span></div>
+              <div class="rating-bar"><div class="rating-fill" style="width: 30%"></div></div>
+            </div>
+            <div class="rating-item">
+              <div class="rating-label"><span>Nightlife</span><span>2/10</span></div>
+              <div class="rating-bar"><div class="rating-fill pink" style="width: 20%"></div></div>
+            </div>
+            <div class="rating-item">
+              <div class="rating-label"><span>Family-Friendly</span><span>10/10</span></div>
+              <div class="rating-bar"><div class="rating-fill blue" style="width: 100%"></div></div>
+            </div>
+            <div class="rating-item">
+              <div class="rating-label"><span>Surfing</span><span>8/10</span></div>
+              <div class="rating-bar"><div class="rating-fill cyan" style="width: 80%"></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Where to Stay Section -->
+      <section id="stay" class="section">
+        <div class="section-header">
+          <span class="section-subtitle">Rest & Recharge</span>
+          <h2 class="section-title">Where to Stay <span class="affiliate-tag" style="vertical-align: middle; margin-left: 12px;">Affiliate Partner</span></h2>
+          <div class="divider"></div>
+          <p class="body-text" style="max-width: 700px;">
+            From beachfront boutiques to jungle retreats. Book through our partners for exclusive rates.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <div class="listing-card">
+            <div class="listing-image" style="background: linear-gradient(135deg, #fef3c7, #fde68a);">
+              <span style="font-size: 48px;">🏨</span>
+              <div class="listing-image-badge"><span class="affiliate-tag">Partner Rate</span></div>
+            </div>
+            <div class="listing-content">
+              <div class="listing-header">
+                <div>
+                  <div class="listing-name">Hotel Capitan Suizo</div>
+                  <div class="listing-location">Boutique Beach Hotel</div>
+                </div>
+                <div class="listing-price">$$$$</div>
+              </div>
+              <p class="restaurant-desc">Beachfront elegance with lush gardens, pool, and exceptional service.</p>
+              <div style="margin-top: 16px;">
+                <a href="#" class="btn-primary" style="width: 100%; text-align: center;">Check Availability →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="listing-card">
+            <div class="listing-image" style="background: linear-gradient(135deg, #dbeafe, #bfdbfe);">
+              <span style="font-size: 48px;">🏨</span>
+              <div class="listing-image-badge"><span class="affiliate-tag">Partner Rate</span></div>
+            </div>
+            <div class="listing-content">
+              <div class="listing-header">
+                <div>
+                  <div class="listing-name">Tamarindo Diria</div>
+                  <div class="listing-location">Beach Resort</div>
+                </div>
+                <div class="listing-price">$$$</div>
+              </div>
+              <p class="restaurant-desc">Full-service resort directly on Tamarindo Beach with multiple pools.</p>
+              <div style="margin-top: 16px;">
+                <a href="#" class="btn-primary" style="width: 100%; text-align: center;">Check Availability →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="listing-card">
+            <div class="listing-image" style="background: linear-gradient(135deg, #dcfce7, #bbf7d0);">
+              <span style="font-size: 48px;">🏨</span>
+              <div class="listing-image-badge"><span class="affiliate-tag">Partner Rate</span></div>
+            </div>
+            <div class="listing-content">
+              <div class="listing-header">
+                <div>
+                  <div class="listing-name">Witch's Rock Surf Camp</div>
+                  <div class="listing-location">Surf Hotel</div>
+                </div>
+                <div class="listing-price">$$</div>
+              </div>
+              <p class="restaurant-desc">The ultimate surf experience with lessons, rentals, and community vibes.</p>
+              <div style="margin-top: 16px;">
+                <a href="#" class="btn-primary" style="width: 100%; text-align: center;">Check Availability →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Eat & Drink Section -->
+      <section id="eat" class="section">
+        <div class="section-header">
+          <span class="section-subtitle">Local Flavors</span>
+          <h2 class="section-title">Where to Eat & Drink</h2>
+          <div class="divider"></div>
+          <p class="body-text" style="max-width: 700px;">
+            From fresh ceviche to farm-to-table cuisine. Our picks for the best flavors in Tamarindo.
+          </p>
+        </div>
+
+        <div class="card-grid-3">
+          <div class="restaurant-card">
+            <div class="restaurant-header">
+              <div class="restaurant-name">Pangas Beach Club</div>
+              <div class="restaurant-price">$$$$</div>
+            </div>
+            <div class="restaurant-meta">Seafood • Langosta</div>
+            <p class="restaurant-desc"><strong>Must try:</strong> Tuna tataki. Sunset dining with toes in the sand.</p>
+          </div>
+
+          <div class="restaurant-card">
+            <div class="restaurant-header">
+              <div class="restaurant-name">Dragonfly Bar & Grill</div>
+              <div class="restaurant-price">$$$$</div>
+            </div>
+            <div class="restaurant-meta">Fusion • Centro</div>
+            <p class="restaurant-desc"><strong>Must try:</strong> Thai shrimp curry. Award-winning fusion in garden setting.</p>
+          </div>
+
+          <div class="restaurant-card">
+            <div class="restaurant-header">
+              <div class="restaurant-name">Nogui's</div>
+              <div class="restaurant-price">$$</div>
+            </div>
+            <div class="restaurant-meta">Costa Rican • Centro</div>
+            <p class="restaurant-desc"><strong>Must try:</strong> Fish tacos. Beachfront institution since 1974.</p>
+          </div>
+
+          <div class="restaurant-card">
+            <div class="restaurant-header">
+              <div class="restaurant-name">El Coconut</div>
+              <div class="restaurant-price">$$$</div>
+            </div>
+            <div class="restaurant-meta">International • Centro</div>
+            <p class="restaurant-desc"><strong>Must try:</strong> Coconut shrimp. Creative cocktails and global flavors.</p>
+          </div>
+
+          <div class="restaurant-card">
+            <div class="restaurant-header">
+              <div class="restaurant-name">La Bodega</div>
+              <div class="restaurant-price">$$</div>
+            </div>
+            <div class="restaurant-meta">Deli & Wine • Centro</div>
+            <p class="restaurant-desc"><strong>Must try:</strong> Charcuterie board. Gourmet provisions and wine bar.</p>
+          </div>
+
+          <div class="restaurant-card">
+            <div class="restaurant-header">
+              <div class="restaurant-name">Patagonia Argentinian Grill</div>
+              <div class="restaurant-price">$$$</div>
+            </div>
+            <div class="restaurant-meta">Steakhouse • Centro</div>
+            <p class="restaurant-desc"><strong>Must try:</strong> Ribeye steak. Premium cuts grilled to perfection.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Things to Do Section -->
+      <section id="do" class="section">
+        <div class="section-header">
+          <span class="section-subtitle">Adventures Await</span>
+          <h2 class="section-title">Things to Do <span class="affiliate-tag" style="vertical-align: middle; margin-left: 12px;">Bookable</span></h2>
+          <div class="divider"></div>
+          <p class="body-text" style="max-width: 700px;">
+            Adventures for every energy level. Book directly through our partners.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <div class="activity-card">
+            <div class="activity-icon water">🏄</div>
+            <div class="activity-content">
+              <div>
+                <div class="activity-name">Surf Lessons</div>
+                <div class="activity-meta">2 hours • Beginner-friendly</div>
+              </div>
+              <div class="activity-price">$55-75</div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon wildlife">🐢</div>
+            <div class="activity-content">
+              <div>
+                <div class="activity-name">Sea Turtle Nesting Tour</div>
+                <div class="activity-meta">3 hours • Oct-Feb</div>
+              </div>
+              <div class="activity-price">$45</div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon nature">🌅</div>
+            <div class="activity-content">
+              <div>
+                <div class="activity-name">Sunset Sailing Catamaran</div>
+                <div class="activity-meta">4 hours • All levels</div>
+              </div>
+              <div class="activity-price">$85</div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon adventure">🐎</div>
+            <div class="activity-content">
+              <div>
+                <div class="activity-name">Horseback Beach Ride</div>
+                <div class="activity-meta">2 hours • Sunset available</div>
+              </div>
+              <div class="activity-price">$65</div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon wildlife">🐒</div>
+            <div class="activity-content">
+              <div>
+                <div class="activity-name">Rincon de la Vieja Day Trip</div>
+                <div class="activity-meta">Full day • Moderate</div>
+              </div>
+              <div class="activity-price">$130</div>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-icon water">🤿</div>
+            <div class="activity-content">
+              <div>
+                <div class="activity-name">Scuba Diving Catalinas</div>
+                <div class="activity-meta">Full day • Certified</div>
+              </div>
+              <div class="activity-price">$150</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Practical Info Section -->
+      <section id="practical" class="section">
+        <div class="section-header">
+          <span class="section-subtitle">Need to Know</span>
+          <h2 class="section-title">Practical Information</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div class="card-grid">
+          <div class="card">
+            <h4 style="font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; margin-bottom: 12px;">🚗 Getting There</h4>
+            <p class="body-text" style="font-size: 15px;">1 hour from LIR Liberia airport. Rent a car ($45-70/day) or take a shared shuttle ($40-50). Private transfer ~$100.</p>
+          </div>
+
+          <div class="card">
+            <h4 style="font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; margin-bottom: 12px;">💰 Money</h4>
+            <p class="body-text" style="font-size: 15px;">USD widely accepted. Colones for small purchases. ATMs in town center. Credit cards at most businesses.</p>
+          </div>
+
+          <div class="card">
+            <h4 style="font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; margin-bottom: 12px;">🏥 Healthcare</h4>
+            <p class="body-text" style="font-size: 15px;">Multiple clinics in town. Hospital in Liberia (1 hour). Several pharmacies available. Travel insurance recommended.</p>
+          </div>
+
+          <div class="card">
+            <h4 style="font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; margin-bottom: 12px;">📱 Connectivity</h4>
+            <p class="body-text" style="font-size: 15px;">Good 4G/LTE coverage. Most cafes have WiFi. Consider Kolbi prepaid SIM ($10-15/month unlimited).</p>
+          </div>
+
+          <div class="card">
+            <h4 style="font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; margin-bottom: 12px;">⚠️ Safety</h4>
+            <p class="body-text" style="font-size: 15px;">Generally safe. Watch for strong currents. Don't leave valuables on beach or in cars. Use hotel safes.</p>
+          </div>
+
+          <div class="card">
+            <h4 style="font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; margin-bottom: 12px;">🌧️ Best Time to Visit</h4>
+            <p class="body-text" style="font-size: 15px;">Dry season Dec-Apr (hot, sunny). Green season May-Nov has fewer crowds, lower prices, occasional rain.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Insider Tips Section -->
+      <section id="tips" class="section">
+        <div class="section-header">
+          <span class="section-subtitle">Local Secrets</span>
+          <h2 class="section-title">Insider Tips</h2>
+          <div class="divider"></div>
+          <p class="body-text" style="max-width: 700px;">
+            Local knowledge that makes the difference between tourist and traveler.
+          </p>
+        </div>
+
+        <div class="tip-card">
+          <p>🏄 Best surf is early morning (5-7am) before the wind. Witch's Rock and Ollie's Point are worth the boat trip for intermediates+.</p>
+        </div>
+
+        <div class="tip-card">
+          <p>🌅 For sunset, skip crowded Tamarindo Beach. Head to Playa Langosta or take the estuary boat to Playa Grande for unobstructed views.</p>
+        </div>
+
+        <div class="tip-card">
+          <p>🐢 Turtle nesting season runs Oct-Feb. Book Playa Grande tours in advance—limited spots due to conservation rules.</p>
+        </div>
+
+        <div class="tip-card">
+          <p>🍽️ Skip the beachfront restaurants for dinner. The best food is one block back—better prices, same quality.</p>
+        </div>
+
+        <div class="tip-card">
+          <p>🚗 Rent a 4x4 if visiting during green season. Some roads flood. Reserve early in high season—cars sell out.</p>
+        </div>
+
+        <div class="tip-card">
+          <p>🛒 Saturday morning farmer's market at the central park has the freshest produce and local goods. Arrive early.</p>
+        </div>
+
+        <div class="tip-card">
+          <p>🍺 Happy hour runs 4-6pm at most bars. Sharky's and Crazy Monkey have the best sunset drink specials.</p>
+        </div>
+
+        <div class="tip-card">
+          <p>🏊 The estuary between Tamarindo and Playa Grande has crocodiles. Don't swim across—take the boat ($2).</p>
+        </div>
+      </section>
+
+      <!-- Itineraries Section -->
+      <section id="itineraries" class="section">
+        <div class="section-header">
+          <span class="section-subtitle">Plan Your Days</span>
+          <h2 class="section-title">Sample Itineraries</h2>
+          <div class="divider"></div>
+          <p class="body-text" style="max-width: 700px;">
+            Pre-planned trips optimized for different styles and timeframes.
+          </p>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-header">
+            <div>
+              <h3 class="itinerary-title">Surf & Sun Weekend (3 Days)</h3>
+              <span class="tag">Beach & Waves</span>
+            </div>
+            <a href="#" class="btn-secondary">Book This Trip</a>
+          </div>
+          <ul class="itinerary-days">
+            <li class="itinerary-day">
+              <span class="itinerary-dot"></span>
+              <p>Day 1: Arrive, beach time, sunset catamaran cruise</p>
+            </li>
+            <li class="itinerary-day">
+              <span class="itinerary-dot"></span>
+              <p>Day 2: Morning surf lesson, lunch at Nogui's, afternoon pool, dinner at Dragonfly</p>
+            </li>
+            <li class="itinerary-day">
+              <span class="itinerary-dot"></span>
+              <p>Day 3: Playa Grande morning, brunch, depart afternoon</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-header">
+            <div>
+              <h3 class="itinerary-title">Adventure Explorer (5 Days)</h3>
+              <span class="tag">Active & Wildlife</span>
+            </div>
+            <a href="#" class="btn-secondary">Book This Trip</a>
+          </div>
+          <ul class="itinerary-days">
+            <li class="itinerary-day">
+              <span class="itinerary-dot"></span>
+              <p>Day 1: Arrive, settle in, sunset beach walk</p>
+            </li>
+            <li class="itinerary-day">
+              <span class="itinerary-dot"></span>
+              <p>Day 2: Rincon de la Vieja day trip—zip lines, hot springs, waterfalls</p>
+            </li>
+            <li class="itinerary-day">
+              <span class="itinerary-dot"></span>
+              <p>Day 3: Morning surf, afternoon scuba at Catalinas Islands</p>
+            </li>
+            <li class="itinerary-day">
+              <span class="itinerary-dot"></span>
+              <p>Day 4: Horseback beach ride, evening turtle tour (seasonal)</p>
+            </li>
+            <li class="itinerary-day">
+              <span class="itinerary-dot"></span>
+              <p>Day 5: Beach morning, depart</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="itinerary-header">
+            <div>
+              <h3 class="itinerary-title">Family Beach Vacation (7 Days)</h3>
+              <span class="tag">Kid-Friendly Fun</span>
+            </div>
+            <a href="#" class="btn-secondary">Book This Trip</a>
+          </div>
+          <ul class="itinerary-days">
+            <li class="itinerary-day">
+              <span class="itinerary-dot"></span>
+              <p>Day 1-2: Settle in, beach time, pool, explore town</p>
+            </li>
+            <li class="itinerary-day">
+              <span class="itinerary-dot"></span>
+              <p>Day 3: Family surf lesson morning, wildlife sanctuary afternoon</p>
+            </li>
+            <li class="itinerary-day">
+              <span class="itinerary-dot"></span>
+              <p>Day 4: Sunset catamaran with snorkeling</p>
+            </li>
+            <li class="itinerary-day">
+              <span class="itinerary-dot"></span>
+              <p>Day 5: Day trip to Arenal Volcano or Monteverde</p>
+            </li>
+            <li class="itinerary-day">
+              <span class="itinerary-dot"></span>
+              <p>Day 6: Horseback riding, beach, farewell dinner</p>
+            </li>
+            <li class="itinerary-day">
+              <span class="itinerary-dot"></span>
+              <p>Day 7: Departure</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Real Estate Section -->
+      <section id="realestate" class="section">
+        <div class="section-header">
+          <span class="section-subtitle">Invest in Paradise</span>
+          <h2 class="section-title">Real Estate <span class="affiliate-tag" style="vertical-align: middle; margin-left: 12px;">High-Value Referrals</span></h2>
+          <div class="divider"></div>
+          <p class="body-text" style="max-width: 700px;">
+            Browse condos, homes, and land opportunities across Tamarindo's best neighborhoods.
+          </p>
+        </div>
+
+        <div class="filters">
+          <div class="filter-group">
+            <label>Neighborhood</label>
+            <select>
+              <option value="">All Areas</option>
+              <option value="centro">Tamarindo Centro</option>
+              <option value="langosta">Playa Langosta</option>
+              <option value="grande">Playa Grande</option>
+              <option value="pinilla">Hacienda Pinilla</option>
+              <option value="hills">Tamarindo Hills</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Price Range</label>
+            <select>
+              <option value="">Any Price</option>
+              <option value="under250k">Under $250K</option>
+              <option value="250k-500k">$250K - $500K</option>
+              <option value="500k-1m">$500K - $1M</option>
+              <option value="over1m">$1M+</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Property Type</label>
+            <select>
+              <option value="">All Types</option>
+              <option value="condo">Condos</option>
+              <option value="house">Houses</option>
+              <option value="land">Land</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="card-grid">
+          <div class="listing-card">
+            <div class="listing-image">
+              <span style="font-size: 48px;">🏢</span>
+              <div class="listing-image-badge"><span class="affiliate-tag">Referral Fee</span></div>
+            </div>
+            <div class="listing-content">
+              <div class="listing-header">
+                <div>
+                  <div class="listing-name">Azul Condos - 2BR</div>
+                  <div class="listing-location">Tamarindo Centro • Walk to Beach</div>
+                </div>
+                <div class="listing-price">$285K</div>
+              </div>
+              <div class="listing-specs">
+                <span>🛏️ 2 bed</span>
+                <span>🚿 2 bath</span>
+                <span>📐 1,100 sqft</span>
+              </div>
+              <div class="listing-highlights">
+                <span class="listing-highlight">Pool & gym</span>
+                <span class="listing-highlight">2 blocks to beach</span>
+                <span class="listing-highlight">Rental ready</span>
+              </div>
+              <div class="listing-actions">
+                <a href="#" class="btn-primary">Schedule Tour</a>
+                <a href="#" class="btn-secondary">Details</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="listing-card">
+            <div class="listing-image">
+              <span style="font-size: 48px;">🌅</span>
+              <div class="listing-image-badge"><span class="affiliate-tag">Referral Fee</span></div>
+            </div>
+            <div class="listing-content">
+              <div class="listing-header">
+                <div>
+                  <div class="listing-name">Langosta Ocean View Home</div>
+                  <div class="listing-location">Playa Langosta • Gated Community</div>
+                </div>
+                <div class="listing-price">$895K</div>
+              </div>
+              <div class="listing-specs">
+                <span>🛏️ 4 bed</span>
+                <span>🚿 3.5 bath</span>
+                <span>📐 3,500 sqft</span>
+              </div>
+              <div class="listing-highlights">
+                <span class="listing-highlight">Ocean views</span>
+                <span class="listing-highlight">Private pool</span>
+                <span class="listing-highlight">Walk to beach</span>
+              </div>
+              <div class="listing-actions">
+                <a href="#" class="btn-primary">Schedule Tour</a>
+                <a href="#" class="btn-secondary">Details</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="listing-card">
+            <div class="listing-image">
+              <span style="font-size: 48px;">⛳</span>
+              <div class="listing-image-badge"><span class="affiliate-tag">Referral Fee</span></div>
+            </div>
+            <div class="listing-content">
+              <div class="listing-header">
+                <div>
+                  <div class="listing-name">Hacienda Pinilla Villa</div>
+                  <div class="listing-location">Hacienda Pinilla • Golf Course</div>
+                </div>
+                <div class="listing-price">$1.4M</div>
+              </div>
+              <div class="listing-specs">
+                <span>🛏️ 4 bed</span>
+                <span>🚿 4 bath</span>
+                <span>📐 4,200 sqft</span>
+              </div>
+              <div class="listing-highlights">
+                <span class="listing-highlight">Beach club access</span>
+                <span class="listing-highlight">Golf membership</span>
+                <span class="listing-highlight">$12K+/mo rental</span>
+              </div>
+              <div class="listing-actions">
+                <a href="#" class="btn-primary">Schedule Tour</a>
+                <a href="#" class="btn-secondary">Details</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="listing-card">
+            <div class="listing-image">
+              <span style="font-size: 48px;">🏄</span>
+              <div class="listing-image-badge"><span class="affiliate-tag">Referral Fee</span></div>
+            </div>
+            <div class="listing-content">
+              <div class="listing-header">
+                <div>
+                  <div class="listing-name">Playa Grande Beach Lot</div>
+                  <div class="listing-location">Playa Grande • 500m to Beach</div>
+                </div>
+                <div class="listing-price">$185K</div>
+              </div>
+              <div class="listing-specs">
+                <span>🌳 0.5 acres</span>
+                <span>🏗️ Build ready</span>
+                <span>📜 Titled</span>
+              </div>
+              <div class="listing-highlights">
+                <span class="listing-highlight">Surf access</span>
+                <span class="listing-highlight">Quiet area</span>
+                <span class="listing-highlight">Nature views</span>
+              </div>
+              <div class="listing-actions">
+                <a href="#" class="btn-primary">Schedule Tour</a>
+                <a href="#" class="btn-secondary">Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Market Stats -->
+        <div class="market-stats">
+          <div class="market-stat">
+            <div class="market-stat-value">$185K</div>
+            <div class="market-stat-label">Entry Point</div>
+            <div class="market-stat-sub">Land/Studio</div>
+          </div>
+          <div class="market-stat">
+            <div class="market-stat-value">$525K</div>
+            <div class="market-stat-label">Median Price</div>
+            <div class="market-stat-sub">2-3BR condo</div>
+          </div>
+          <div class="market-stat">
+            <div class="market-stat-value">$1.2M+</div>
+            <div class="market-stat-label">Luxury Start</div>
+            <div class="market-stat-sub">Ocean view home</div>
+          </div>
+          <div class="market-stat">
+            <div class="market-stat-value">7-12%</div>
+            <div class="market-stat-label">Rental Yield</div>
+            <div class="market-stat-sub">Annual gross</div>
+          </div>
+        </div>
+
+        <!-- Trusted Partners -->
+        <h3 style="font-family: 'Source Serif 4', Georgia, serif; font-size: 28px; margin-top: 48px; margin-bottom: 24px;">Trusted Real Estate Partners</h3>
+        <div class="card-grid">
+          <div class="agency-card">
+            <div class="agency-badge"><span class="affiliate-tag">Referral Partner</span></div>
+            <h4 class="agency-name">RE/MAX Tamarindo</h4>
+            <p class="agency-specialty">Gold Coast property specialists</p>
+            <p class="agency-contact">📞 +506 2653-XXXX<br>🌐 remax-tamarindo.com</p>
+            <a href="#" class="btn-primary" style="width: 100%; text-align: center;">Contact Agent</a>
+          </div>
+
+          <div class="agency-card">
+            <div class="agency-badge"><span class="affiliate-tag">Referral Partner</span></div>
+            <h4 class="agency-name">Tamarindo Real Estate</h4>
+            <p class="agency-specialty">Local experts since 1998</p>
+            <p class="agency-contact">📞 +506 2653-XXXX<br>🌐 tamarindorealestate.com</p>
+            <a href="#" class="btn-primary" style="width: 100%; text-align: center;">Contact Agent</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="/" class="logo" style="color: white;">
+          <div class="logo-icon">🌴</div>
+          <div>
+            <div class="logo-text">PuraVida</div>
+            <div class="logo-tagline" style="color: rgba(255,255,255,0.5);">Costa Rica Travel</div>
+          </div>
+        </a>
+        <p>Authentic Costa Rica travel insights. Beyond the brochure, into the real experiences that matter.</p>
+      </div>
+      <div>
+        <h4>Destinations</h4>
+        <ul>
+          <li><a href="#">Jacó</a></li>
+          <li><a href="#">Manuel Antonio</a></li>
+          <li><a href="#">Tamarindo</a></li>
+          <li><a href="#">La Fortuna</a></li>
+          <li><a href="#">Monteverde</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Trip Planning</a></li>
+          <li><a href="#">Real Estate Guide</a></li>
+          <li><a href="#">Visa & Residency</a></li>
+          <li><a href="#">Cost of Living</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Newsletter</h4>
+        <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 16px;">Weekly insider tips & exclusive deals</p>
+        <a href="#" class="btn-primary" style="width: 100%; text-align: center;">Subscribe</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 PuraVida.com. All rights reserved.</p>
+      <p>Affiliate Disclosure: We earn commissions from partner bookings.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Active navigation highlighting
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.section-nav');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= sectionTop - 200) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

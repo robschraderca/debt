@@ -1623,6 +1623,105 @@
                 text-align: center;
             }
         }
+            /* Mobile Menu Styles */
+            .nav-menu.mobile-open {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 64px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: var(--white);
+                padding: 1.5rem;
+                gap: 0;
+                overflow-y: auto;
+                z-index: 999;
+            }
+
+            .nav-menu.mobile-open .nav-item {
+                border-bottom: 1px solid var(--gray-100);
+            }
+
+            .nav-menu.mobile-open .nav-link {
+                padding: 1rem 0;
+                font-size: 1.125rem;
+                color: var(--navy);
+            }
+
+            .nav-menu.mobile-open .nav-dropdown {
+                position: static;
+                transform: none;
+                opacity: 1;
+                visibility: visible;
+                box-shadow: none;
+                border: none;
+                padding: 0 0 1rem 1rem;
+                min-width: 100%;
+                display: none;
+            }
+
+            .nav-menu.mobile-open .nav-item.dropdown-open .nav-dropdown {
+                display: block;
+            }
+
+            .nav-menu.mobile-open .dropdown-item {
+                padding: 0.75rem 0;
+            }
+
+            .nav-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .nav-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .nav-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .nav-inner {
+                padding: 0 1rem;
+            }
+
+            .hero-actions,
+            .page-hero-actions {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .hero-actions .btn-primary,
+            .hero-actions .btn-secondary,
+            .page-hero-actions .btn-primary,
+            .page-hero-actions .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 0.875rem;
+            }
+
+            .hero-title,
+            .page-hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.375rem;
+            }
+
+            .logo-text {
+                font-size: 1.125rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -2482,5 +2581,42 @@
         });
     </script>
 
+
+    <script>
+        // Mobile Menu Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('mobile-open');
+                navToggle.classList.toggle('active');
+                document.body.style.overflow = navMenu.classList.contains('mobile-open') ? 'hidden' : '';
+            });
+
+            navItems.forEach(item => {
+                const link = item.querySelector('.nav-link');
+                if (item.querySelector('.nav-dropdown')) {
+                    link.addEventListener('click', (e) => {
+                        if (window.innerWidth <= 768) {
+                            e.preventDefault();
+                            item.classList.toggle('dropdown-open');
+                        }
+                    });
+                }
+            });
+
+            document.querySelectorAll('.dropdown-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        navMenu.classList.remove('mobile-open');
+                        navToggle.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+        }
+    </script>
 </body>
 </html>
