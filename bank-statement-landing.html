@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bank Statement Loans | Michael McDermott – AmeriTrust Mortgage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --navy-deep: #0F1B33;
+    --navy-mid: #243B63;
+    --teal: #2C6E7A;
+    --teal-light: #3A8B99;
+    --red: #C8102E;
+    --red-hover: #A60D25;
+    --white: #FFFFFF;
+    --offwhite: #F5F7FA;
+    --gray-50: #FAFBFC;
+    --gray-100: #EEF1F5;
+    --gray-200: #D5DAE3;
+    --gray-400: #8B93A5;
+    --gray-600: #5A6178;
+    --gold: #C9A84C;
+    --gold-light: #E8D9A0;
+    --success: #1D9E4E;
+    --font-heading: 'Libre Baskerville', Georgia, serif;
+    --font-body: 'Source Sans 3', -apple-system, sans-serif;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.07);
+    --shadow-lg: 0 12px 48px rgba(0,0,0,0.09);
+    --shadow-xl: 0 20px 60px rgba(0,0,0,0.12);
+    --radius: 10px;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    color: var(--navy);
+    background: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===================== TOP BAR ===================== */
+  .topbar {
+    background: var(--navy-deep);
+    padding: 9px 0;
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+  }
+  .topbar-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .topbar a { color: rgba(255,255,255,0.8); text-decoration: none; transition: color .2s; }
+  .topbar a:hover { color: var(--gold-light); }
+  .topbar-left { display: flex; align-items: center; gap: 16px; }
+  .topbar-right { display: flex; align-items: center; gap: 18px; }
+  .topbar-right a { display: flex; align-items: center; gap: 5px; }
+
+  /* ===================== HEADER ===================== */
+  .header {
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-100);
+    padding: 14px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+  }
+  .header-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo-group { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo-icon { height: 52px; width: auto; }
+  .logo-wordmark { display: none; }
+  .logo-wordmark .name {
+    font-family: var(--font-body);
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .logo-wordmark .name span { color: var(--red); }
+  .logo-wordmark .sub {
+    font-size: 9.5px;
+    font-weight: 500;
+    color: var(--gray-400);
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+  .header-actions { display: flex; align-items: center; gap: 20px; }
+  .header-phone {
+    font-weight: 600;
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    transition: color .2s;
+  }
+  .header-phone:hover { color: var(--red); }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 26px;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    transition: all .25s ease;
+    letter-spacing: .3px;
+  }
+  .btn-red { background: var(--red); color: var(--white); }
+  .btn-red:hover { background: var(--red-hover); transform: translateY(-1px); box-shadow: 0 4px 18px rgba(200,16,46,.28); }
+  .btn-navy { background: var(--navy); color: var(--white); }
+  .btn-navy:hover { background: var(--navy-mid); transform: translateY(-1px); box-shadow: 0 4px 18px rgba(27,42,74,.25); }
+  .btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.35); }
+  .btn-outline:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.6); }
+
+  /* ===================== HERO ===================== */
+  .hero {
+    background: linear-gradient(135deg, #1a3a5c 0%, #2C6E7A 50%, #1B2A4A 100%);
+    color: var(--white);
+    padding: 72px 0 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(200,16,46,.07) 0%, transparent 70%);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(201,168,76,.06) 0%, transparent 70%);
+  }
+  .hero-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 50px;
+    padding: 7px 18px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--gold-light);
+    margin-bottom: 22px;
+    backdrop-filter: blur(6px);
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    animation: fadeDown .5s ease;
+  }
+  .hero-badge::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: blink 2s infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+  @keyframes fadeDown { from{opacity:0;transform:translateY(-10px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
+
+  .hero-content h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(30px, 4.2vw, 46px);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 18px;
+    animation: fadeUp .6s ease;
+  }
+  .hero-content h2 .highlight {
+    color: var(--gold-light);
+    display: inline;
+  }
+  .hero-content .hero-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,.72);
+    line-height: 1.7;
+    margin-bottom: 30px;
+    max-width: 520px;
+    animation: fadeUp .6s ease .1s both;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    animation: fadeUp .6s ease .2s both;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 32px;
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,.1);
+    animation: fadeUp .6s ease .3s both;
+  }
+  .hero-stat .val {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--white);
+  }
+  .hero-stat .lbl {
+    font-size: 12px;
+    color: rgba(255,255,255,.45);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+  }
+
+  /* ── Mini Form in Hero ── */
+  .hero-form-card {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 32px 28px;
+    box-shadow: var(--shadow-xl);
+    color: var(--navy);
+    animation: fadeUp .7s ease .15s both;
+  }
+  .hero-form-card .form-title {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .hero-form-card .form-subtitle {
+    font-size: 13.5px;
+    color: var(--gray-600);
+    text-align: center;
+    margin-bottom: 22px;
+  }
+  .hero-form-card .form-subtitle strong { color: var(--red); }
+
+  /* ===================== BENEFITS BAR ===================== */
+  .benefits-bar {
+    background: var(--white);
+    padding: 0;
+    position: relative;
+    z-index: 5;
+    margin-top: -28px;
+  }
+  .benefits-bar-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .benefits-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+  }
+  .b-card {
+    padding: 28px 22px;
+    text-align: center;
+    border-right: 1px solid var(--gray-100);
+    transition: background .2s;
+  }
+  .b-card:last-child { border-right: none; }
+  .b-card:hover { background: var(--offwhite); }
+  .b-icon {
+    width: 44px;
+    height: 44px;
+    margin: 0 auto 12px;
+    background: var(--offwhite);
+    border: 1.5px solid var(--gray-100);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--red);
+  }
+  .b-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .b-card p { font-size: 12.5px; color: var(--gray-600); line-height: 1.5; }
+
+  /* ===================== MAIN CONTENT ===================== */
+  .main-content {
+    padding: 72px 0 80px;
+    background: var(--offwhite);
+  }
+  .main-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 460px;
+    gap: 56px;
+    align-items: start;
+  }
+
+  /* ── Left Column ── */
+  .info-col {}
+  .label-sm {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+  .info-col h3 {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .info-col > p {
+    font-size: 15.5px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+  .feature-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
+  .feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 18px;
+    background: var(--white);
+    border-radius: var(--radius);
+    border: 1px solid var(--gray-100);
+    transition: all .25s;
+  }
+  .feature-list li:hover { border-color: var(--teal); box-shadow: var(--shadow-md); }
+  .f-check {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    background: var(--teal);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+  .f-check svg { width: 13px; height: 13px; }
+  .f-text h5 { font-size: 14.5px; font-weight: 700; color: var(--navy); margin-bottom: 1px; }
+  .f-text p { font-size: 13px; color: var(--gray-600); line-height: 1.5; }
+
+  /* Who it's for */
+  .who-section {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    border: 1px solid var(--gray-100);
+    margin-bottom: 28px;
+  }
+  .who-section h4 {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+  .who-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .who-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: var(--offwhite);
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--navy);
+  }
+  .who-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--red);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* LO Card */
+  .lo-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 24px;
+    border: 1px solid var(--gray-100);
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: var(--shadow-sm);
+  }
+  .lo-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy), var(--teal));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .lo-details h5 { font-size: 16px; font-weight: 700; color: var(--navy); }
+  .lo-details .lo-role { font-size: 13px; color: var(--red); font-weight: 600; }
+  .lo-details .lo-nmls { font-size: 11.5px; color: var(--gray-400); margin-bottom: 6px; }
+  .lo-details .lo-phones { display: flex; flex-direction: column; gap: 3px; }
+  .lo-details .lo-phones a { font-size: 13px; color: var(--navy); text-decoration: none; display: flex; align-items: center; gap: 5px; }
+  .lo-details .lo-phones a:hover { color: var(--red); }
+
+  /* ── Right Column: Form ── */
+  .form-col { position: sticky; top: 86px; }
+  .form-card {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 36px 30px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--gray-100);
+    position: relative;
+    overflow: hidden;
+  }
+  .form-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--red), var(--teal));
+  }
+  .form-head { text-align: center; margin-bottom: 24px; }
+  .form-head h3 {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 5px;
+  }
+  .form-head p { font-size: 13.5px; color: var(--gray-600); }
+  .form-head p strong { color: var(--teal); }
+
+  .form-group { margin-bottom: 14px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .form-group label {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 5px;
+    letter-spacing: .2px;
+  }
+  .form-group label .req { color: var(--red); }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 11px 13px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 7px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--navy);
+    background: var(--white);
+    transition: all .2s;
+    outline: none;
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: var(--gray-400); }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(44,110,122,.08); }
+  .form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238B93A5' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 13px center;
+    padding-right: 34px;
+  }
+  .form-divider { height: 1px; background: var(--gray-100); margin: 18px 0; }
+  .form-section-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gray-400);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+  }
+  .btn-submit {
+    width: 100%;
+    padding: 15px;
+    background: var(--red);
+    color: var(--white);
+    border: none;
+    border-radius: 7px;
+    font-family: var(--font-body);
+    font-size: 15.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .3s;
+    margin-top: 6px;
+    letter-spacing: .4px;
+  }
+  .btn-submit:hover { background: var(--red-hover); transform: translateY(-1px); box-shadow: 0 6px 24px rgba(200,16,46,.28); }
+  .btn-submit:active { transform: translateY(0); }
+
+  .form-footer { text-align: center; margin-top: 14px; font-size: 11.5px; color: var(--gray-400); line-height: 1.5; }
+  .form-footer a { color: var(--navy); text-decoration: underline; }
+
+  .form-trust {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--gray-100);
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: var(--gray-400);
+    font-weight: 500;
+  }
+  .trust-item svg { width: 13px; height: 13px; color: var(--success); }
+
+  /* ── Success State ── */
+  .form-success { display: none; text-align: center; padding: 36px 16px; }
+  .form-success.visible { display: block; }
+  .form-success .done-icon {
+    width: 68px; height: 68px;
+    background: linear-gradient(135deg, var(--success), #28c76f);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 18px;
+    animation: pop .4s cubic-bezier(.34,1.56,.64,1);
+  }
+  @keyframes pop { from{transform:scale(0);opacity:0} to{transform:scale(1);opacity:1} }
+  .form-success h3 { font-family: var(--font-heading); font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .form-success p { font-size: 14.5px; color: var(--gray-600); line-height: 1.6; }
+  .form-fields.hide { display: none; }
+
+  /* ===================== PROGRAMS SECTION ===================== */
+  .programs {
+    background: var(--white);
+    padding: 64px 0;
+    border-top: 1px solid var(--gray-100);
+  }
+  .programs-inner { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .programs-head { text-align: center; margin-bottom: 36px; }
+  .programs-head h3 { font-family: var(--font-heading); font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .programs-head p { font-size: 14.5px; color: var(--gray-600); }
+  .programs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .prog-card {
+    padding: 24px 20px;
+    background: var(--offwhite);
+    border-radius: var(--radius);
+    border: 1px solid var(--gray-100);
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .prog-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: var(--red);
+    opacity: 0;
+    transition: opacity .3s;
+  }
+  .prog-card:hover { border-color: var(--navy); box-shadow: var(--shadow-md); background: var(--white); }
+  .prog-card:hover::after { opacity: 1; }
+  .prog-card h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .prog-card p { font-size: 12.5px; color: var(--gray-600); line-height: 1.6; margin-bottom: 10px; }
+  .prog-specs { display: flex; gap: 16px; }
+  .prog-spec { font-size: 10.5px; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: .4px; }
+  .prog-spec span { display: block; font-size: 13px; color: var(--navy); font-weight: 600; letter-spacing: 0; text-transform: none; margin-top: 1px; }
+
+  /* ===================== FOOTER ===================== */
+  .footer {
+    background: var(--navy-deep);
+    color: rgba(255,255,255,.55);
+    padding: 44px 0 20px;
+  }
+  .footer-inner { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    flex-wrap: wrap;
+  }
+  .footer-brand h4 {
+    font-family: var(--font-body);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .footer-brand span { font-size: 10.5px; color: rgba(255,255,255,.3); letter-spacing: 1.2px; text-transform: uppercase; }
+  .footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
+  .footer-links a { color: rgba(255,255,255,.55); text-decoration: none; font-size: 13.5px; display: flex; align-items: center; gap: 5px; transition: color .2s; }
+  .footer-links a:hover { color: var(--gold-light); }
+  .footer-legal { padding-top: 22px; font-size: 11px; line-height: 1.7; color: rgba(255,255,255,.3); }
+  .footer-legal a { color: rgba(255,255,255,.4); text-decoration: underline; }
+  .footer-legal a:hover { color: var(--gold-light); }
+  .footer-bottom {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 11.5px;
+    color: rgba(255,255,255,.25);
+  }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 1024px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-form-card { max-width: 440px; }
+    .main-inner { grid-template-columns: 1fr; gap: 36px; }
+    .form-col { position: static; }
+    .programs-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .benefits-row { grid-template-columns: 1fr 1fr; }
+    .b-card { border-right: none; border-bottom: 1px solid var(--gray-100); }
+    .programs-grid { grid-template-columns: 1fr; }
+    .hero { padding: 48px 0 60px; }
+    .hero-stats { gap: 20px; }
+    .hero-stats .hero-stat .val { font-size: 22px; }
+    .form-card { padding: 28px 20px; }
+    .form-row { grid-template-columns: 1fr; }
+    .header-phone { display: none; }
+    .lo-card { flex-direction: column; text-align: center; }
+    .who-grid { grid-template-columns: 1fr; }
+    .footer-top { flex-direction: column; }
+    .footer-links { flex-direction: column; gap: 10px; }
+  }
+  @media (max-width: 480px) {
+    .benefits-row { grid-template-columns: 1fr; }
+    .topbar-inner { flex-direction: column; text-align: center; gap: 4px; }
+    .topbar-right { flex-direction: column; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      AmeriTrust Mortgage Corporation&ensp;|&ensp;NMLS# 217229
+    </div>
+    <div class="topbar-right">
+      <a href="tel:+17144771814">📞 714.477.1814</a>
+      <a href="mailto:mmcdermott@ameritrust-mortgage.com">✉ mmcdermott@ameritrust-mortgage.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="header-inner">
+    <a href="https://www.ameritrust-mortgage.com" class="logo-group" target="_blank">
+      <img class="logo-icon" src="data:image/jpeg;base64,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" alt="AmeriTrust Mortgage Corporation Logo">
+      <div class="logo-wordmark">
+        <div class="name">AMERI<span>TRUST</span></div>
+        <div class="sub">Mortgage Corporation</div>
+      </div>
+    </a>
+    <div class="header-actions">
+      <a href="tel:+17144771814" class="header-phone">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        714.477.1814
+      </a>
+      <a href="#apply" class="btn btn-red">Get My Rate →</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">Self-Employed Home Financing</div>
+      <h2>Qualify Using Your<br><span class="highlight">Bank Statements</span> —<br>Not Tax Returns</h2>
+      <p class="hero-sub">Self-employed? Business owner? Freelancer? Use 12–24 months of personal or business bank statements to qualify for a home loan. No tax returns required.</p>
+      <div class="hero-ctas">
+        <a href="#apply" class="btn btn-red">Apply Now — 60 Seconds →</a>
+        <a href="tel:+17146243598" class="btn btn-outline">📞 Call Michael</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="val">620+</div>
+          <div class="lbl">Min. FICO</div>
+        </div>
+        <div class="hero-stat">
+          <div class="val">90%</div>
+          <div class="lbl">Max LTV</div>
+        </div>
+        <div class="hero-stat">
+          <div class="val">$3.5M</div>
+          <div class="lbl">Max Loan</div>
+        </div>
+        <div class="hero-stat">
+          <div class="val">No</div>
+          <div class="lbl">Tax Returns</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick mini-form in hero -->
+    <div class="hero-form-card">
+      <div class="form-title">See If You Qualify</div>
+      <div class="form-subtitle"><strong>60 seconds</strong> · No credit pull · No obligation</div>
+      <form id="heroQuickForm" onsubmit="scrollToForm(event)">
+        <div class="form-group">
+          <label>Full Name <span class="req">*</span></label>
+          <input type="text" name="quickName" placeholder="Your full name" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email <span class="req">*</span></label>
+            <input type="email" name="quickEmail" placeholder="you@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>Phone <span class="req">*</span></label>
+            <input type="tel" name="quickPhone" placeholder="(555) 123-4567" id="heroPhone">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Are you self-employed?</label>
+          <select name="selfEmployed">
+            <option value="">Select...</option>
+            <option>Yes — business owner</option>
+            <option>Yes — freelancer / 1099</option>
+            <option>Yes — gig worker</option>
+            <option>No — W-2 employee</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-submit" style="margin-top:12px;">Continue to Full Application →</button>
+        <div class="form-trust" style="border:none; margin-top:12px; padding:0;">
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 12 15 16 9"/></svg>
+            Secure
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 12 15 16 9"/></svg>
+            No Credit Pull
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 12 15 16 9"/></svg>
+            Licensed
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BENEFITS BAR ===== -->
+<section class="benefits-bar">
+  <div class="benefits-bar-inner">
+    <div class="benefits-row">
+      <div class="b-card">
+        <div class="b-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 0 0-8 0v2"/></svg>
+        </div>
+        <h4>No Tax Returns</h4>
+        <p>12–24 months of bank statements replace traditional income docs</p>
+      </div>
+      <div class="b-card">
+        <div class="b-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h4>Fast Closings</h4>
+        <p>In-house underwriting for quicker approvals and closings</p>
+      </div>
+      <div class="b-card">
+        <div class="b-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h4>Multiple Property Types</h4>
+        <p>Primary, second home, and investment properties all eligible</p>
+      </div>
+      <div class="b-card">
+        <div class="b-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>Direct Lender</h4>
+        <p>One team from origination to funding — no middlemen</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MAIN CONTENT ===== -->
+<section class="main-content" id="apply">
+  <div class="main-inner">
+    <!-- Left Info -->
+    <div class="info-col">
+      <div class="label-sm">Bank Statement Loans</div>
+      <h3>Built for Self-Employed Borrowers</h3>
+      <p>Bank Statement Loans are Non-QM loans that use 12–24 months of personal or business bank statements to verify your income — instead of tax returns. Ideal for business owners, freelancers, and anyone whose tax returns don't reflect their true earning power.</p>
+
+      <ul class="feature-list">
+        <li>
+          <div class="f-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="f-text">
+            <h5>Personal or Business Statements</h5>
+            <p>Use 12–24 months of personal bank statements (100% of deposits) or business statements (50% expense factor).</p>
+          </div>
+        </li>
+        <li>
+          <div class="f-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="f-text">
+            <h5>Up to 90% LTV</h5>
+            <p>Put as little as 10% down on your primary home. Investment properties available at 80% LTV.</p>
+          </div>
+        </li>
+        <li>
+          <div class="f-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="f-text">
+            <h5>Cash-Out Refinance Available</h5>
+            <p>Tap into your home equity up to 80% LTV — perfect for reinvesting in your business or portfolio.</p>
+          </div>
+        </li>
+        <li>
+          <div class="f-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="f-text">
+            <h5>Interest-Only Options</h5>
+            <p>Lower your monthly payment with interest-only periods available on qualifying loans.</p>
+          </div>
+        </li>
+        <li>
+          <div class="f-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="f-text">
+            <h5>Loan Amounts up to $3.5M</h5>
+            <p>Finance high-value properties with competitive rates and flexible terms.</p>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Who it's for -->
+      <div class="who-section">
+        <h4>Who Is This For?</h4>
+        <div class="who-grid">
+          <div class="who-item"><div class="who-dot"></div>Business Owners</div>
+          <div class="who-item"><div class="who-dot"></div>Freelancers & Consultants</div>
+          <div class="who-item"><div class="who-dot"></div>1099 Contractors</div>
+          <div class="who-item"><div class="who-dot"></div>Gig Economy Workers</div>
+          <div class="who-item"><div class="who-dot"></div>Seasonal Income Earners</div>
+          <div class="who-item"><div class="who-dot"></div>High Write-Off Borrowers</div>
+        </div>
+      </div>
+
+      <!-- Loan Officer -->
+      <div class="lo-card">
+        <div class="lo-avatar">MM</div>
+        <div class="lo-details">
+          <h5>Michael McDermott</h5>
+          <div class="lo-role">Senior Loan Officer</div>
+          <div class="lo-nmls">NMLS# 1036304</div>
+          <div class="lo-phones">
+            <a href="tel:+17144771814">📞 714.477.1814 (office)</a>
+            <a href="tel:+17146243598">📱 714.624.3598 (cell)</a>
+            <a href="mailto:mmcdermott@ameritrust-mortgage.com">✉ mmcdermott@ameritrust-mortgage.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Form -->
+    <div class="form-col">
+      <div class="form-card">
+        <div class="form-fields" id="formFields">
+          <div class="form-head">
+            <h3>Get Your Custom Rate Quote</h3>
+            <p>Takes 60 seconds · <strong>No credit pull</strong></p>
+          </div>
+
+          <form id="mainForm" onsubmit="submitForm(event)">
+            <div class="form-section-label">Contact Information</div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name <span class="req">*</span></label>
+                <input type="text" name="firstName" placeholder="John" required id="ff_first">
+              </div>
+              <div class="form-group">
+                <label>Last Name <span class="req">*</span></label>
+                <input type="text" name="lastName" placeholder="Smith" required id="ff_last">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Email Address <span class="req">*</span></label>
+                <input type="email" name="email" placeholder="john@email.com" required id="ff_email">
+              </div>
+              <div class="form-group">
+                <label>Phone Number <span class="req">*</span></label>
+                <input type="tel" name="phone" placeholder="(555) 123-4567" required id="ff_phone">
+              </div>
+            </div>
+
+            <div class="form-divider"></div>
+            <div class="form-section-label">Property Details</div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Target Home Price <span class="req">*</span></label>
+                <input type="text" name="homePrice" placeholder="$350,000" required>
+              </div>
+              <div class="form-group">
+                <label>Property Zip Code <span class="req">*</span></label>
+                <input type="text" name="zipCode" placeholder="92780" maxlength="5" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Property Type</label>
+                <select name="propertyType">
+                  <option value="">Select...</option>
+                  <option>Single Family Home</option>
+                  <option>Condo / Townhome</option>
+                  <option>Multi-Unit (2–4)</option>
+                  <option>Investment Property</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Loan Purpose</label>
+                <select name="loanPurpose">
+                  <option value="">Select...</option>
+                  <option>Purchase</option>
+                  <option>Rate & Term Refinance</option>
+                  <option>Cash-Out Refinance</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-divider"></div>
+            <div class="form-section-label">Financial Snapshot</div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Credit Score Range <span class="req">*</span></label>
+                <select name="creditScore" required>
+                  <option value="">Select range...</option>
+                  <option>760+</option>
+                  <option>740 – 759</option>
+                  <option>720 – 739</option>
+                  <option>700 – 719</option>
+                  <option>680 – 699</option>
+                  <option>660 – 679</option>
+                  <option>640 – 659</option>
+                  <option>620 – 639</option>
+                  <option>Below 620</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Avg. Monthly Deposits <span class="req">*</span></label>
+                <input type="text" name="monthlyDeposits" placeholder="$8,000" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Employment Type</label>
+                <select name="employmentType">
+                  <option value="">Select...</option>
+                  <option>Self-Employed (Business Owner)</option>
+                  <option>Freelancer / 1099</option>
+                  <option>Gig Worker</option>
+                  <option>W-2 Employee</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Years Self-Employed</label>
+                <select name="yearsSelfEmployed">
+                  <option value="">Select...</option>
+                  <option>Less than 1 year</option>
+                  <option>1 – 2 years</option>
+                  <option>2 – 5 years</option>
+                  <option>5+ years</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Down Payment Available</label>
+              <select name="downPayment">
+                <option value="">Select...</option>
+                <option>10% – 15%</option>
+                <option>15% – 20%</option>
+                <option>20% – 25%</option>
+                <option>25%+</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Anything else we should know?</label>
+              <textarea name="notes" rows="3" placeholder="Timeline, questions, special circumstances..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Get My Custom Quote →</button>
+          </form>
+
+          <div class="form-footer">
+            By submitting you agree to be contacted regarding your loan inquiry.<br>
+            <a href="https://www.ameritrust-mortgage.com/privacy-notice" target="_blank">Privacy Policy</a> · <a href="https://www.ameritrust-mortgage.com/terms-of-use" target="_blank">Terms</a>
+          </div>
+          <div class="form-trust">
+            <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 12 15 16 9"/></svg>Secure & Encrypted</div>
+            <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 12 15 16 9"/></svg>No Credit Pull</div>
+            <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 12 15 16 9"/></svg>NMLS Licensed</div>
+          </div>
+        </div>
+
+        <!-- Success -->
+        <div class="form-success" id="formSuccess">
+          <div class="done-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>You're All Set!</h3>
+          <p>Thank you for your interest in Bank Statement Loans. Michael McDermott will personally review your information and reach out within 24 hours with your custom rate quote.</p>
+          <p style="margin-top:14px; font-size:13.5px; color:var(--gray-400);">Need immediate help?<br><a href="tel:+17146243598" style="color:var(--red); font-weight:600; text-decoration:none;">Call 714.624.3598</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ADDITIONAL PROGRAMS ===== -->
+<section class="programs">
+  <div class="programs-inner">
+    <div class="programs-head">
+      <div class="label-sm" style="text-align:center;">Additional Programs</div>
+      <h3>More Ways to Finance Your Goals</h3>
+      <p>Beyond Bank Statement Loans, AmeriTrust offers a full suite of Non-QM and traditional loan programs.</p>
+    </div>
+    <div class="programs-grid">
+      <div class="prog-card">
+        <h4>DSCR Loans</h4>
+        <p>For real estate investors — qualify based on your property's rental income, not personal tax returns.</p>
+        <div class="prog-specs">
+          <div class="prog-spec">FICO <span>620 Min</span></div>
+          <div class="prog-spec">LTV <span>80% Max</span></div>
+        </div>
+      </div>
+      <div class="prog-card">
+        <h4>1099 Income Loans</h4>
+        <p>Independent contractors and freelancers — use your 1099 forms to qualify.</p>
+        <div class="prog-specs">
+          <div class="prog-spec">FICO <span>640 Min</span></div>
+          <div class="prog-spec">LTV <span>90% Max</span></div>
+        </div>
+      </div>
+      <div class="prog-card">
+        <h4>Profit & Loss Only</h4>
+        <p>Qualify with just your P&L statements — ideal for newer businesses without extensive returns.</p>
+        <div class="prog-specs">
+          <div class="prog-spec">FICO <span>660 Min</span></div>
+          <div class="prog-spec">LTV <span>85% Max</span></div>
+        </div>
+      </div>
+      <div class="prog-card">
+        <h4>Bridge Loans</h4>
+        <p>Short-term financing to bridge buying your next property while selling your current one.</p>
+        <div class="prog-specs">
+          <div class="prog-spec">FICO <span>660 Min</span></div>
+          <div class="prog-spec">LTV <span>90% Max</span></div>
+        </div>
+      </div>
+      <div class="prog-card">
+        <h4>Asset Depletion</h4>
+        <p>Qualify using your liquid assets instead of traditional income documentation.</p>
+        <div class="prog-specs">
+          <div class="prog-spec">FICO <span>700 Min</span></div>
+          <div class="prog-spec">LTV <span>75% Max</span></div>
+        </div>
+      </div>
+      <div class="prog-card">
+        <h4>ITIN Loans</h4>
+        <p>For borrowers with an ITIN number instead of a Social Security number.</p>
+        <div class="prog-specs">
+          <div class="prog-spec">FICO <span>700 Min</span></div>
+          <div class="prog-spec">LTV <span>80% Max</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="data:image/jpeg;base64,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" alt="AmeriTrust Mortgage" style="height:42px; width:auto; filter: brightness(10);">
+      </div>
+      <div class="footer-links">
+        <a href="tel:+17144771814">📞 714.477.1814</a>
+        <a href="tel:+17146243598">📱 714.624.3598</a>
+        <a href="mailto:mmcdermott@ameritrust-mortgage.com">✉ Email Michael</a>
+        <a href="https://www.ameritrust-mortgage.com" target="_blank">🌐 ameritrust-mortgage.com</a>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <strong>Legal Disclaimer:</strong> Ameritrust Mortgage Corporation, NMLS #217229 located at 17341 Irvine Blvd., Suite 285, Tustin, CA 92780. Ameritrust Mortgage Corporation does not provide legal, tax, or financial advice or guidance and is not associated with any government agency. This is not an offer for an extension of credit nor a commitment to lend. Programs, rates, terms, and conditions are subject to change without notice. Certain restrictions may apply. All approvals are subject to underwriting guidelines and minimum credit requirements. Not all loans or products are available in all states. As a result of refinancing, your total finance charges may be higher over the life of the loan. Minimum and maximum loan amounts apply. For current licensure information, please visit: <a href="https://www.nmlsconsumeraccess.org" target="_blank">www.nmlsconsumeraccess.org</a>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 AmeriTrust Mortgage Corporation. All Rights Reserved. Michael McDermott NMLS# 1036304</span>
+      <span>Equal Housing Lender&ensp;|&ensp;17341 Irvine Blvd, Tustin, CA 92780</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Phone number formatting ──
+  function formatPhone(input) {
+    input.addEventListener('input', function(e) {
+      let v = e.target.value.replace(/\D/g, '');
+      if (v.length >= 6) v = '(' + v.slice(0,3) + ') ' + v.slice(3,6) + '-' + v.slice(6,10);
+      else if (v.length >= 3) v = '(' + v.slice(0,3) + ') ' + v.slice(3);
+      e.target.value = v;
+    });
+  }
+  formatPhone(document.getElementById('heroPhone'));
+  formatPhone(document.getElementById('ff_phone'));
+
+  // ── Currency formatting ──
+  document.querySelectorAll('input[name="homePrice"], input[name="monthlyDeposits"]').forEach(el => {
+    el.addEventListener('blur', function(e) {
+      let v = e.target.value.replace(/[^0-9.]/g, '');
+      if (v) {
+        let num = parseFloat(v);
+        if (!isNaN(num)) e.target.value = '$' + num.toLocaleString();
+      }
+    });
+  });
+
+  // ── Hero quick form → scroll to main form & prefill ──
+  function scrollToForm(e) {
+    e.preventDefault();
+    const qf = e.target;
+    const name = qf.querySelector('[name="quickName"]').value.trim();
+    const email = qf.querySelector('[name="quickEmail"]').value.trim();
+    const phone = qf.querySelector('[name="quickPhone"]').value.trim();
+
+    // Prefill main form
+    if (name) {
+      const parts = name.split(' ');
+      document.getElementById('ff_first').value = parts[0] || '';
+      document.getElementById('ff_last').value = parts.slice(1).join(' ') || '';
+    }
+    if (email) document.getElementById('ff_email').value = email;
+    if (phone) document.getElementById('ff_phone').value = phone;
+
+    // Scroll
+    document.getElementById('apply').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // ── Main form submit ──
+  function submitForm(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+    const payload = {};
+    data.forEach((val, key) => { payload[key] = val; });
+
+    // Log to console for integration
+    console.log('Lead Submission:', JSON.stringify(payload, null, 2));
+
+    // Show success
+    document.getElementById('formFields').classList.add('hide');
+    document.getElementById('formSuccess').classList.add('visible');
+
+    // Scroll to success message
+    document.querySelector('.form-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+</script>
+</body>
+</html>
